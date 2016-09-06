@@ -7,13 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7ADD6ADD37EA827D220FFF3E /* Pods_HishowZoneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 789EC14E4EF78F260C568315 /* Pods_HishowZoneTests.framework */; };
 		AED3D72B1D7E5E6E0069033F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED3D72A1D7E5E6E0069033F /* AppDelegate.swift */; };
-		AED3D72D1D7E5E6E0069033F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED3D72C1D7E5E6E0069033F /* ViewController.swift */; };
 		AED3D7301D7E5E6E0069033F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AED3D72E1D7E5E6E0069033F /* Main.storyboard */; };
 		AED3D7321D7E5E6E0069033F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AED3D7311D7E5E6E0069033F /* Assets.xcassets */; };
 		AED3D7351D7E5E6E0069033F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AED3D7331D7E5E6E0069033F /* LaunchScreen.storyboard */; };
 		AED3D7401D7E5E6E0069033F /* HishowZoneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED3D73F1D7E5E6E0069033F /* HishowZoneTests.swift */; };
 		AED3D74B1D7E5E6E0069033F /* HishowZoneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED3D74A1D7E5E6E0069033F /* HishowZoneUITests.swift */; };
+		AED3D75D1D7E621B0069033F /* HishowAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED3D75C1D7E621B0069033F /* HishowAPI.swift */; };
+		AED3D7631D7E64460069033F /* TopicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED3D7621D7E64460069033F /* TopicsViewController.swift */; };
+		AED3D7691D7E64940069033F /* TopicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED3D7681D7E64940069033F /* TopicModel.swift */; };
+		AED3D76C1D7E659B0069033F /* TopicItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED3D76A1D7E659B0069033F /* TopicItemCell.swift */; };
+		AED3D76D1D7E659B0069033F /* TopicItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AED3D76B1D7E659B0069033F /* TopicItemCell.xib */; };
+		AED3D7701D7E65E10069033F /* RoundAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED3D76F1D7E65E10069033F /* RoundAvatar.swift */; };
+		AED3D7721D7E67BD0069033F /* ExUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED3D7711D7E67BD0069033F /* ExUIViewController.swift */; };
+		AED3D7741D7E68780069033F /* ExUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED3D7731D7E68780069033F /* ExUIView.swift */; };
+		AED3D77A1D7E6C030069033F /* ProfileAvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED3D7781D7E6C030069033F /* ProfileAvatarCell.swift */; };
+		AED3D77B1D7E6C030069033F /* ProfileAvatarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AED3D7791D7E6C030069033F /* ProfileAvatarCell.xib */; };
+		B1A477AF36E4CEB3609B6921 /* Pods_HishowZoneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB751A03EF2C31E30499BE /* Pods_HishowZoneUITests.framework */; };
+		C2059AFF404E5F199CF5882B /* Pods_HishowZone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D144F19ABAC71F9205B1333 /* Pods_HishowZone.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +46,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		34057CDAEDC8DBCA9CAD9347 /* Pods-HishowZone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HishowZone.release.xcconfig"; path = "Pods/Target Support Files/Pods-HishowZone/Pods-HishowZone.release.xcconfig"; sourceTree = "<group>"; };
+		3D144F19ABAC71F9205B1333 /* Pods_HishowZone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HishowZone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E448190B2ECBD29A39019D7 /* Pods-HishowZoneTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HishowZoneTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HishowZoneTests/Pods-HishowZoneTests.release.xcconfig"; sourceTree = "<group>"; };
+		789EC14E4EF78F260C568315 /* Pods_HishowZoneTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HishowZoneTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		960753FD6DF7A9C2331FF843 /* Pods-HishowZoneUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HishowZoneUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HishowZoneUITests/Pods-HishowZoneUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9FC546136B239924CA50DBB1 /* Pods-HishowZoneUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HishowZoneUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HishowZoneUITests/Pods-HishowZoneUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		ADBB751A03EF2C31E30499BE /* Pods_HishowZoneUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HishowZoneUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AED3D7271D7E5E6E0069033F /* HishowZone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HishowZone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AED3D72A1D7E5E6E0069033F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AED3D72C1D7E5E6E0069033F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AED3D72F1D7E5E6E0069033F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AED3D7311D7E5E6E0069033F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AED3D7341D7E5E6E0069033F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +65,19 @@
 		AED3D7461D7E5E6E0069033F /* HishowZoneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HishowZoneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AED3D74A1D7E5E6E0069033F /* HishowZoneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HishowZoneUITests.swift; sourceTree = "<group>"; };
 		AED3D74C1D7E5E6E0069033F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AED3D7581D7E61890069033F /* HishowZone-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HishowZone-Bridging-Header.h"; sourceTree = "<group>"; };
+		AED3D75C1D7E621B0069033F /* HishowAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HishowAPI.swift; sourceTree = "<group>"; };
+		AED3D7621D7E64460069033F /* TopicsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicsViewController.swift; sourceTree = "<group>"; };
+		AED3D7681D7E64940069033F /* TopicModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicModel.swift; sourceTree = "<group>"; };
+		AED3D76A1D7E659B0069033F /* TopicItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicItemCell.swift; sourceTree = "<group>"; };
+		AED3D76B1D7E659B0069033F /* TopicItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicItemCell.xib; sourceTree = "<group>"; };
+		AED3D76F1D7E65E10069033F /* RoundAvatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundAvatar.swift; sourceTree = "<group>"; };
+		AED3D7711D7E67BD0069033F /* ExUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExUIViewController.swift; sourceTree = "<group>"; };
+		AED3D7731D7E68780069033F /* ExUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExUIView.swift; sourceTree = "<group>"; };
+		AED3D7781D7E6C030069033F /* ProfileAvatarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileAvatarCell.swift; sourceTree = "<group>"; };
+		AED3D7791D7E6C030069033F /* ProfileAvatarCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileAvatarCell.xib; sourceTree = "<group>"; };
+		B54EEF628B185F9AB575844E /* Pods-HishowZoneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HishowZoneTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HishowZoneTests/Pods-HishowZoneTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BDA9D0021BC2825DD32730E4 /* Pods-HishowZone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HishowZone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HishowZone/Pods-HishowZone.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2059AFF404E5F199CF5882B /* Pods_HishowZone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7ADD6ADD37EA827D220FFF3E /* Pods_HishowZoneTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +101,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1A477AF36E4CEB3609B6921 /* Pods_HishowZoneUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4347A435632E654A46EECAD1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3D144F19ABAC71F9205B1333 /* Pods_HishowZone.framework */,
+				789EC14E4EF78F260C568315 /* Pods_HishowZoneTests.framework */,
+				ADBB751A03EF2C31E30499BE /* Pods_HishowZoneUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7E107174C742BF3BF6C1B821 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BDA9D0021BC2825DD32730E4 /* Pods-HishowZone.debug.xcconfig */,
+				34057CDAEDC8DBCA9CAD9347 /* Pods-HishowZone.release.xcconfig */,
+				B54EEF628B185F9AB575844E /* Pods-HishowZoneTests.debug.xcconfig */,
+				5E448190B2ECBD29A39019D7 /* Pods-HishowZoneTests.release.xcconfig */,
+				9FC546136B239924CA50DBB1 /* Pods-HishowZoneUITests.debug.xcconfig */,
+				960753FD6DF7A9C2331FF843 /* Pods-HishowZoneUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		AED3D71E1D7E5E6D0069033F = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +138,8 @@
 				AED3D73E1D7E5E6E0069033F /* HishowZoneTests */,
 				AED3D7491D7E5E6E0069033F /* HishowZoneUITests */,
 				AED3D7281D7E5E6E0069033F /* Products */,
+				7E107174C742BF3BF6C1B821 /* Pods */,
+				4347A435632E654A46EECAD1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,7 +157,10 @@
 			isa = PBXGroup;
 			children = (
 				AED3D72A1D7E5E6E0069033F /* AppDelegate.swift */,
-				AED3D72C1D7E5E6E0069033F /* ViewController.swift */,
+				AED3D75C1D7E621B0069033F /* HishowAPI.swift */,
+				AED3D7581D7E61890069033F /* HishowZone-Bridging-Header.h */,
+				AED3D75E1D7E63F90069033F /* General */,
+				AED3D7601D7E64020069033F /* Features */,
 				AED3D72E1D7E5E6E0069033F /* Main.storyboard */,
 				AED3D7311D7E5E6E0069033F /* Assets.xcassets */,
 				AED3D7331D7E5E6E0069033F /* LaunchScreen.storyboard */,
@@ -125,6 +187,61 @@
 			path = HishowZoneUITests;
 			sourceTree = "<group>";
 		};
+		AED3D75E1D7E63F90069033F /* General */ = {
+			isa = PBXGroup;
+			children = (
+				AED3D75F1D7E63F90069033F /* Extensions */,
+				AED3D76E1D7E65CA0069033F /* View */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		AED3D75F1D7E63F90069033F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AED3D7711D7E67BD0069033F /* ExUIViewController.swift */,
+				AED3D7731D7E68780069033F /* ExUIView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AED3D7601D7E64020069033F /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				AED3D7611D7E64020069033F /* Topics */,
+				AED3D7771D7E6BE90069033F /* Profile */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		AED3D7611D7E64020069033F /* Topics */ = {
+			isa = PBXGroup;
+			children = (
+				AED3D7621D7E64460069033F /* TopicsViewController.swift */,
+				AED3D76A1D7E659B0069033F /* TopicItemCell.swift */,
+				AED3D76B1D7E659B0069033F /* TopicItemCell.xib */,
+				AED3D7681D7E64940069033F /* TopicModel.swift */,
+			);
+			path = Topics;
+			sourceTree = "<group>";
+		};
+		AED3D76E1D7E65CA0069033F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AED3D76F1D7E65E10069033F /* RoundAvatar.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AED3D7771D7E6BE90069033F /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				AED3D7781D7E6C030069033F /* ProfileAvatarCell.swift */,
+				AED3D7791D7E6C030069033F /* ProfileAvatarCell.xib */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +249,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AED3D74F1D7E5E6E0069033F /* Build configuration list for PBXNativeTarget "HishowZone" */;
 			buildPhases = (
+				5C895C6EFD4C1C98413DA98C /* [CP] Check Pods Manifest.lock */,
 				AED3D7231D7E5E6E0069033F /* Sources */,
 				AED3D7241D7E5E6E0069033F /* Frameworks */,
 				AED3D7251D7E5E6E0069033F /* Resources */,
+				456A069C046A445AD6494334 /* [CP] Embed Pods Frameworks */,
+				384121A1E1B7CC4DF19AF956 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +269,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AED3D7521D7E5E6E0069033F /* Build configuration list for PBXNativeTarget "HishowZoneTests" */;
 			buildPhases = (
+				EED5EE6E5921C645548837BC /* [CP] Check Pods Manifest.lock */,
 				AED3D7371D7E5E6E0069033F /* Sources */,
 				AED3D7381D7E5E6E0069033F /* Frameworks */,
 				AED3D7391D7E5E6E0069033F /* Resources */,
+				E8E9A169AB8C2B7C8C9A5313 /* [CP] Embed Pods Frameworks */,
+				EEEB4CA8866FE9D7CE3C8F75 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +290,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AED3D7551D7E5E6E0069033F /* Build configuration list for PBXNativeTarget "HishowZoneUITests" */;
 			buildPhases = (
+				03D7FE19938B263737350979 /* [CP] Check Pods Manifest.lock */,
 				AED3D7421D7E5E6E0069033F /* Sources */,
 				AED3D7431D7E5E6E0069033F /* Frameworks */,
 				AED3D7441D7E5E6E0069033F /* Resources */,
+				74B5E41FC0B030A65FE5D183 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -229,8 +354,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AED3D76D1D7E659B0069033F /* TopicItemCell.xib in Resources */,
 				AED3D7351D7E5E6E0069033F /* LaunchScreen.storyboard in Resources */,
 				AED3D7321D7E5E6E0069033F /* Assets.xcassets in Resources */,
+				AED3D77B1D7E6C030069033F /* ProfileAvatarCell.xib in Resources */,
 				AED3D7301D7E5E6E0069033F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,13 +378,143 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		03D7FE19938B263737350979 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		384121A1E1B7CC4DF19AF956 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HishowZone/Pods-HishowZone-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		456A069C046A445AD6494334 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HishowZone/Pods-HishowZone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5C895C6EFD4C1C98413DA98C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		74B5E41FC0B030A65FE5D183 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HishowZoneUITests/Pods-HishowZoneUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8E9A169AB8C2B7C8C9A5313 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HishowZoneTests/Pods-HishowZoneTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EED5EE6E5921C645548837BC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EEEB4CA8866FE9D7CE3C8F75 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HishowZoneTests/Pods-HishowZoneTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AED3D7231D7E5E6E0069033F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AED3D72D1D7E5E6E0069033F /* ViewController.swift in Sources */,
+				AED3D77A1D7E6C030069033F /* ProfileAvatarCell.swift in Sources */,
+				AED3D7691D7E64940069033F /* TopicModel.swift in Sources */,
+				AED3D7701D7E65E10069033F /* RoundAvatar.swift in Sources */,
+				AED3D75D1D7E621B0069033F /* HishowAPI.swift in Sources */,
 				AED3D72B1D7E5E6E0069033F /* AppDelegate.swift in Sources */,
+				AED3D7721D7E67BD0069033F /* ExUIViewController.swift in Sources */,
+				AED3D7631D7E64460069033F /* TopicsViewController.swift in Sources */,
+				AED3D76C1D7E659B0069033F /* TopicItemCell.swift in Sources */,
+				AED3D7741D7E68780069033F /* ExUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,28 +654,40 @@
 		};
 		AED3D7501D7E5E6E0069033F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDA9D0021BC2825DD32730E4 /* Pods-HishowZone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/\"/**";
 				INFOPLIST_FILE = HishowZone/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cgm.HishowZone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HishowZone/HishowZone-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		AED3D7511D7E5E6E0069033F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34057CDAEDC8DBCA9CAD9347 /* Pods-HishowZone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/\"/**";
 				INFOPLIST_FILE = HishowZone/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cgm.HishowZone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HishowZone/HishowZone-Bridging-Header.h";
 			};
 			name = Release;
 		};
 		AED3D7531D7E5E6E0069033F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B54EEF628B185F9AB575844E /* Pods-HishowZoneTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = HishowZoneTests/Info.plist;
@@ -431,6 +700,7 @@
 		};
 		AED3D7541D7E5E6E0069033F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E448190B2ECBD29A39019D7 /* Pods-HishowZoneTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = HishowZoneTests/Info.plist;
@@ -443,6 +713,7 @@
 		};
 		AED3D7561D7E5E6E0069033F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9FC546136B239924CA50DBB1 /* Pods-HishowZoneUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = HishowZoneUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -454,6 +725,7 @@
 		};
 		AED3D7571D7E5E6E0069033F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 960753FD6DF7A9C2331FF843 /* Pods-HishowZoneUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = HishowZoneUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -482,6 +754,7 @@
 				AED3D7511D7E5E6E0069033F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AED3D7521D7E5E6E0069033F /* Build configuration list for PBXNativeTarget "HishowZoneTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +763,7 @@
 				AED3D7541D7E5E6E0069033F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AED3D7551D7E5E6E0069033F /* Build configuration list for PBXNativeTarget "HishowZoneUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +772,7 @@
 				AED3D7571D7E5E6E0069033F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
