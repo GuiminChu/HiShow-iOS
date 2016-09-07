@@ -47,7 +47,6 @@ class TopicsViewController: UIViewController, SegueHandlerType {
             
             //  进入刷新状态后执行
             self.startIndex = 0
-            self.topics.removeAll()
             
             HiShowAPI.sharedInstance.getTopics(start: self.startIndex,
                 completion: { topicModel in
