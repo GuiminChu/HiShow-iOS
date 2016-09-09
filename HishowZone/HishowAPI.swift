@@ -69,6 +69,27 @@ final class HiShowAPI {
         }
     }
     
+    func getUserInfo(uid userId: Int, completion: Void -> Void, failureHandler: FailureHandler?) {
+        
+        Alamofire.request(.GET, "https://api.douban.com/v2/user/\(userId)")
+            .responseJSON { response in
+                
+                switch response.result {
+                    
+                case .Success(let resultValue):
+                    let json = JSON(resultValue)
+                    
+                    print(json)
+//                    let topicModel = TopicModel(fromJson: json)
+                    
+                    completion()
+                    
+                case .Failure:
+                    failureHandler?(reason: .NetworkError, errorMessage: "")
+                }
+        }
+    }
+    
     func getTopics1(envelopInfo: String, requestPackageInfo: String, completion: TopicModel -> Void, failureHandler: FailureHandler?) {
         
         let parameters = [

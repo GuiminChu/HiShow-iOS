@@ -87,6 +87,8 @@ extension TopicsViewController {
         switch segueIdentifierForSegue(segue) {
         case .ToProfileSegue:
             print("ToProfileSegue")
+            let controller = segue.destinationViewController as! ProfileViewController
+            controller.uid = sender as? String
         case .ToTopicDetailSegue:
             print("ToTopicDetailSegue")
         }
@@ -113,7 +115,11 @@ extension TopicsViewController: UITableViewDataSource, UITableViewDelegate {
                 return
             }
             
-            this.performSegueWithIdentifier(SegueIdentifier.ToProfileSegue, sender: self)
+            if let path = tableView.indexPathForCell(cell) {
+                let topic = this.topics[path.row]
+                let uid = topic.author.id
+                this.performSegueWithIdentifier(SegueIdentifier.ToProfileSegue, sender: uid)
+            }
         }
         
         return cell

@@ -66,7 +66,7 @@
         <!--Profile-->
         <scene sceneID="kWU-W0-BBy">
             <objects>
-                <viewController id="Axo-NC-Z8d" sceneMemberID="viewController">
+                <viewController id="Axo-NC-Z8d" customClass="ProfileViewController" customModule="HishowZone" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g56-CZ-t1Z"/>
                         <viewControllerLayoutGuide type="bottom" id="eYI-JV-S1J"/>
@@ -74,9 +74,28 @@
                     <view key="view" contentMode="scaleToFill" id="hQc-Cg-IVy">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rZK-As-kA9">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Axo-NC-Z8d" id="VK9-Dl-1On"/>
+                                    <outlet property="delegate" destination="Axo-NC-Z8d" id="2RO-Sx-gjX"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="rZK-As-kA9" secondAttribute="trailing" id="60P-tH-aPw"/>
+                            <constraint firstItem="eYI-JV-S1J" firstAttribute="top" secondItem="rZK-As-kA9" secondAttribute="bottom" id="T6k-sg-HU8"/>
+                            <constraint firstItem="rZK-As-kA9" firstAttribute="leading" secondItem="hQc-Cg-IVy" secondAttribute="leading" id="gZE-RE-5n9"/>
+                            <constraint firstItem="rZK-As-kA9" firstAttribute="top" secondItem="hQc-Cg-IVy" secondAttribute="top" id="iuI-m9-901"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="P3s-0n-fDP"/>
+                    <connections>
+                        <outlet property="tableView" destination="rZK-As-kA9" id="Hzl-Sh-656"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oqn-OY-q04" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

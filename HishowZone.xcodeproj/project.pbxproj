@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7ADD6ADD37EA827D220FFF3E /* Pods_HishowZoneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 789EC14E4EF78F260C568315 /* Pods_HishowZoneTests.framework */; };
+		AEC2819D1D82BA9500C1D4A9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC2819C1D82BA9500C1D4A9 /* ProfileViewController.swift */; };
 		AED3D72B1D7E5E6E0069033F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED3D72A1D7E5E6E0069033F /* AppDelegate.swift */; };
 		AED3D7301D7E5E6E0069033F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AED3D72E1D7E5E6E0069033F /* Main.storyboard */; };
 		AED3D7321D7E5E6E0069033F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AED3D7311D7E5E6E0069033F /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 		960753FD6DF7A9C2331FF843 /* Pods-HishowZoneUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HishowZoneUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HishowZoneUITests/Pods-HishowZoneUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9FC546136B239924CA50DBB1 /* Pods-HishowZoneUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HishowZoneUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HishowZoneUITests/Pods-HishowZoneUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		ADBB751A03EF2C31E30499BE /* Pods_HishowZoneUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HishowZoneUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEC2819C1D82BA9500C1D4A9 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		AED3D7271D7E5E6E0069033F /* HishowZone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HishowZone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AED3D72A1D7E5E6E0069033F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AED3D72F1D7E5E6E0069033F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 		AED3D7771D7E6BE90069033F /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				AEC2819C1D82BA9500C1D4A9 /* ProfileViewController.swift */,
 				AED3D7781D7E6C030069033F /* ProfileAvatarCell.swift */,
 				AED3D7791D7E6C030069033F /* ProfileAvatarCell.xib */,
 			);
@@ -508,6 +511,7 @@
 			files = (
 				AED3D77A1D7E6C030069033F /* ProfileAvatarCell.swift in Sources */,
 				AED3D7691D7E64940069033F /* TopicModel.swift in Sources */,
+				AEC2819D1D82BA9500C1D4A9 /* ProfileViewController.swift in Sources */,
 				AED3D7701D7E65E10069033F /* RoundAvatar.swift in Sources */,
 				AED3D75D1D7E621B0069033F /* HishowAPI.swift in Sources */,
 				AED3D72B1D7E5E6E0069033F /* AppDelegate.swift in Sources */,
