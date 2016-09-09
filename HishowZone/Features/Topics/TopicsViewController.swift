@@ -33,10 +33,6 @@ class TopicsViewController: UIViewController, SegueHandlerType {
 
         tableView.register(TopicItemCell)
         
-        // tableViewCell 自动计算高度
-//        self.tableView.estimatedRowHeight = 421.0
-//        self.tableView.rowHeight = UITableViewAutomaticDimension
-        
         initMJRefresh()
     }
     
@@ -108,8 +104,6 @@ extension TopicsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(TopicItemCell.reuseIdentifier, forIndexPath: indexPath) as! TopicItemCell
         
-        
-        
         // Configure the cell
         cell.configure(topics[indexPath.row])
         
@@ -126,7 +120,7 @@ extension TopicsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 326
+        return 346
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
