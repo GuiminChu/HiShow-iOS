@@ -61,7 +61,7 @@ final class TopicItemCell: UITableViewCell {
         }
         
         if let urlString = topicInfo.author.avatar, url = NSURL(string: urlString) {
-            avatarImageView.navi_setAvatar(RoundAvatar(avatarURL: url), withFadeTransitionDuration: 0.25)
+            avatarImageView.navi_setAvatar(RoundAvatar(avatarURL: url, avatarStyle: picoAvatarStyle), withFadeTransitionDuration: 0.25)
         }
         
         for topicPhotoInfo in topicInfo.photos {

@@ -10,6 +10,8 @@ import UIKit
 
 class ProfileAvatarCell: UITableViewCell {
 
+    @IBOutlet weak var avatarImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,4 +23,10 @@ class ProfileAvatarCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func configure(largeAvatarUrl: String?) {
+        
+        if let urlString = largeAvatarUrl, url = NSURL(string: urlString) {
+            avatarImageView.navi_setAvatar(RoundAvatar(avatarURL: url, avatarStyle: miniAvatarStyle), withFadeTransitionDuration: 0.25)
+        }
+    }
 }

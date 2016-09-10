@@ -13,12 +13,15 @@ import Navi
 struct RoundAvatar {
     
     let avatarURL: NSURL
+    let avatarStyle: AvatarStyle
     var key: String {
         return "navi_\(avatarURL.absoluteString)"
     }
 }
 
-let roundAvatarStyle: AvatarStyle = .RoundedRectangle(size: CGSize(width: 32, height: 32), cornerRadius: 16, borderWidth: 0)
+let miniAvatarStyle: AvatarStyle = .RoundedRectangle(size: CGSize(width: 64, height: 64), cornerRadius: 32, borderWidth: 0)
+let nanoAvatarStyle: AvatarStyle = .RoundedRectangle(size: CGSize(width: 44, height: 44), cornerRadius: 22, borderWidth: 0)
+let picoAvatarStyle: AvatarStyle = .RoundedRectangle(size: CGSize(width: 32, height: 32), cornerRadius: 16, borderWidth: 0)
 
 extension RoundAvatar: Navi.Avatar {
     
@@ -26,7 +29,7 @@ extension RoundAvatar: Navi.Avatar {
         return avatarURL
     }
     var style: AvatarStyle {
-        return roundAvatarStyle
+        return avatarStyle
     }
     var placeholderImage: UIImage? {
         return nil

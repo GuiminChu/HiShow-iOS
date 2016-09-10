@@ -58,7 +58,7 @@ final class HiShowAPI {
                 case .Success(let resultValue):
                     let json = JSON(resultValue)
                     
-                    print(json)
+//                    print(json)
                     let topicModel = TopicModel(fromJson: json)
                     
                     completion(topicModel)
@@ -69,7 +69,7 @@ final class HiShowAPI {
         }
     }
     
-    func getUserInfo(uid userId: Int, completion: Void -> Void, failureHandler: FailureHandler?) {
+    func getUserInfo(uid userId: String, completion: UserInfo -> Void, failureHandler: FailureHandler?) {
         
         Alamofire.request(.GET, "https://api.douban.com/v2/user/\(userId)")
             .responseJSON { response in
@@ -79,10 +79,9 @@ final class HiShowAPI {
                 case .Success(let resultValue):
                     let json = JSON(resultValue)
                     
-                    print(json)
-//                    let topicModel = TopicModel(fromJson: json)
+                    let userInfo = UserInfo(fromJson: json)
                     
-                    completion()
+                    completion(userInfo)
                     
                 case .Failure:
                     failureHandler?(reason: .NetworkError, errorMessage: "")

@@ -17,15 +17,28 @@ class ProfileViewController: UIViewController {
             reloadData()
         }
     }
+    
+    var userInfo: UserInfo? {
+        didSet {
+            tableView.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        tableView.estimatedRowHeight = 88.0
         
+        setupTableView()
+    }
+    
+    func setupTableView() {
+        tableView.tableFooterView = UIView()
+        
+        // tableViewCell 自动计算高度
+        tableView.estimatedRowHeight = 88.0
+        tableView.rowHeight = UITableViewAutomaticDimension
         
         tableView.register(ProfileAvatarCell)
+        tableView.register(UserInfoCell)
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,7 +47,15 @@ class ProfileViewController: UIViewController {
     }
     
     func reloadData() {
-        print(uid)
+        HiShowAPI.sharedInstance.getUserInfo(uid: uid!,
+            completion: { userInfo in
+                //
+                self.userInfo = userInfo
+            },
+            failureHandler: { (reason, errorMessage) in
+                //
+            }
+        )
     }
 
     /*
@@ -85,12 +106,33 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         case .Avatar:
             
             let cell = tableView.dequeueReusableCellWithIdentifier(ProfileAvatarCell.reuseIdentifier, forIndexPath: indexPath) as! ProfileAvatarCell
+            cell.configure(self.userInfo?.largeAvatar)
             
             return cell
         case .Info:
-            return UITableViewCell()
+            let cell = tableView.dequeueReusableCellWithIdentifier(UserInfoCell.reuseIdentifier, forIndexPath: indexPath) as! UserInfoCell
+            cell.configure(self.userInfo)
+            
+            return cell
         case .Desc:
             return UITableViewCell()
         }
     }
+    
+//    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//        
+//        guard let sec = Section(rawValue: indexPath.section) else {
+//            fatalError()
+//        }
+//        
+//        switch sec {
+//        case .Avatar:
+//            
+//            return 176.0
+//        case .Info:
+//            return 44.0
+//        case .Desc:
+//            return 44.0
+//        }
+//    }
 }
