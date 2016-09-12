@@ -47,7 +47,7 @@
         <!--Detail-->
         <scene sceneID="Gl7-fV-k1H">
             <objects>
-                <viewController id="ekv-em-5Lg" sceneMemberID="viewController">
+                <viewController id="ekv-em-5Lg" customClass="TopicDetailViewController" customModule="HishowZone" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lI4-fF-PPq"/>
                         <viewControllerLayoutGuide type="bottom" id="zri-ow-4SQ"/>
@@ -55,9 +55,28 @@
                     <view key="view" contentMode="scaleToFill" id="jDC-UK-HIc">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dMY-23-Glx">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ekv-em-5Lg" id="UOY-U6-Mzf"/>
+                                    <outlet property="delegate" destination="ekv-em-5Lg" id="TUB-AD-msx"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dMY-23-Glx" firstAttribute="top" secondItem="jDC-UK-HIc" secondAttribute="top" id="2CW-0r-z2U"/>
+                            <constraint firstAttribute="trailing" secondItem="dMY-23-Glx" secondAttribute="trailing" id="C1e-cw-be6"/>
+                            <constraint firstItem="zri-ow-4SQ" firstAttribute="top" secondItem="dMY-23-Glx" secondAttribute="bottom" id="t7d-iW-CCV"/>
+                            <constraint firstItem="dMY-23-Glx" firstAttribute="leading" secondItem="jDC-UK-HIc" secondAttribute="leading" id="zjL-5O-CcZ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="a27-Un-9Ap"/>
+                    <connections>
+                        <outlet property="tableView" destination="dMY-23-Glx" id="TqM-Ae-hKF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8sa-yD-Uwo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

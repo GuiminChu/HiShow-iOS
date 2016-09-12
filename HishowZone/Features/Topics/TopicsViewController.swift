@@ -91,6 +91,9 @@ extension TopicsViewController {
             controller.uid = sender as? String
         case .ToTopicDetailSegue:
             print("ToTopicDetailSegue")
+            let controller = segue.destinationViewController as! TopicDetailViewController
+            controller.topic = topics[sender as! Int]
+            
         }
     }
 }
@@ -134,7 +137,6 @@ extension TopicsViewController: UITableViewDataSource, UITableViewDelegate {
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
         }
         
-        print(indexPath.row)
-        performSegueWithIdentifier(SegueIdentifier.ToTopicDetailSegue, sender: self)
+        performSegueWithIdentifier(SegueIdentifier.ToTopicDetailSegue, sender: indexPath.row)
     }
 }

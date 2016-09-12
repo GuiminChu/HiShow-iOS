@@ -39,6 +39,7 @@ class ProfileViewController: UIViewController {
         
         tableView.register(ProfileAvatarCell)
         tableView.register(UserInfoCell)
+        tableView.register(DescCell)
     }
 
     override func didReceiveMemoryWarning() {
@@ -115,7 +116,10 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
             
             return cell
         case .Desc:
-            return UITableViewCell()
+            let cell = tableView.dequeueReusableCellWithIdentifier(DescCell.reuseIdentifier, forIndexPath: indexPath) as! DescCell
+            cell.configure(self.userInfo?.desc)
+            
+            return cell
         }
     }
     
