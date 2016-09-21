@@ -1,25 +1,23 @@
+source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '9.0'
 
-target 'HishowZone' do
+target 'HiShow' do
 
   use_frameworks!
 
-  # Pods for HishowZone
+  # Pods for HiShow
 
-  pod 'Alamofire'
-  pod 'SwiftyJSON'
-  pod 'Kingfisher'
-  pod 'AlamofireImage'
-  pod 'SKPhotoBrowser'
-  pod 'MJRefresh'
-  pod 'Navi'
+    pod 'Alamofire', '~> 4.0'
+    pod 'Kingfisher', '~> 3.0'
+    pod 'Navi', '~> 1.0.0'
+    pod 'MJRefresh'
 
-  target 'HishowZoneTests' do
+  target 'HiShowTests' do
     inherit! :search_paths
     # Pods for testing
   end
 
-  target 'HishowZoneUITests' do
+  target 'HiShowUITests' do
     inherit! :search_paths
     # Pods for testing
   end

@@ -1,2 +1,2 @@
-# HishowZone-iOS
+# HiShow-iOS
 Haixiuzu client for iOS

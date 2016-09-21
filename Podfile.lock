@@ -1,31 +1,21 @@
 PODS:
-  - Alamofire (3.4.1)
-  - AlamofireImage (2.4.1):
-    - Alamofire (~> 3.3)
-  - Kingfisher (2.4.2)
+  - Alamofire (4.0.0)
+  - Kingfisher (3.0.1)
   - MJRefresh (3.1.12)
-  - Navi (0.4.4)
-  - SKPhotoBrowser (2.0.1)
-  - SwiftyJSON (2.3.2)
+  - Navi (1.0.0)
 
 DEPENDENCIES:
-  - Alamofire
-  - AlamofireImage
-  - Kingfisher
+  - Alamofire (~> 4.0)
+  - Kingfisher (~> 3.0)
   - MJRefresh
-  - Navi
-  - SKPhotoBrowser
-  - SwiftyJSON
+  - Navi (~> 1.0.0)
 
 SPEC CHECKSUMS:
-  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
-  AlamofireImage: 3ccf3347d9ea24580dc11fb892770a0be6a29826
-  Kingfisher: 05bf8d04408aaa70fcd2c8c81b9f1d0f1ad313dd
+  Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
+  Kingfisher: d5a491b45ea453d90a31bd2c0831d5243e73a73f
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
-  Navi: 9ae1e09a9dcf9acbb6fa4b3503e41704f8cd0cc6
-  SKPhotoBrowser: 8d2dd1c476c8e01226f885e2ba581a4601a1cdf1
-  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+  Navi: 476df37605b9af2fea9a7351d6ca81c973cc24e2
 
-PODFILE CHECKSUM: 97ab4ced8167cc0cd32007b76c3466470d1884e1
+PODFILE CHECKSUM: f4676636fa121ee7c6ba2a5e41e63b70e6aab7fd
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.0.rc.2
