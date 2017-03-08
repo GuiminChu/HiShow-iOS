@@ -31,9 +31,9 @@ struct TopicModel {
             // 只展现有照片的话题
             if value.photos.count > 0 {
                 // 过滤掉某些没有营养的广告贴
-                if value.id != "88091185" && value.id != "79786668" {
+//                if value.id != "88091185" && value.id != "79786668" {
                     topics.append(value)
-                }
+//                }
             }
         }
     }
@@ -89,6 +89,7 @@ struct Photo {
     var seqId: String?
     var title: String?
     var topicId: String?
+    var size: PhotoSize!
     
     init(fromJson json: JSON) {
         if json == nil {
@@ -102,6 +103,26 @@ struct Photo {
         topicId      = json["topic_id"].stringValue
         authorId     = json["author_id"].stringValue
         creationDate = json["creation_date"].stringValue
+        
+        let sizeJson = json["size"]
+        if !sizeJson.isEmpty {
+            size = PhotoSize(fromJson: sizeJson)
+        }
+    }
+}
+
+struct PhotoSize {
+    
+    var height: Int = 1
+    var width: Int  = 1
+    
+    init(fromJson json: JSON) {
+        if json.isEmpty {
+            return
+        }
+        
+        height = json["height"].intValue
+        width = json["width"].intValue
     }
 }
 

@@ -6,15 +6,26 @@
 //  Copyright © 2016年 Chu Guimin. All rights reserved.
 //
 
+let headViewH  =  kScreenWidth / 5 * 2
+let headH = kScreenWidth / 5
+
 import UIKit
+import Kingfisher
 
 class ProfileViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    var bgImageView: UIImageView?
+    var blurView: UIVisualEffectView?
+    var headerImageView: UIImageView?
+    var scale: CGFloat?
+    
+    var author: Author!
+    
     var uid: String? {
         didSet {
-            reloadData()
+            requestData()
         }
     }
     
@@ -28,9 +39,13 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         
         setupTableView()
+        setupHeaderView()
+        
+        uid = author.id
     }
     
     func setupTableView() {
+        tableView.contentInset = UIEdgeInsets(top: headViewH, left: 0.0, bottom: 0.0, right: 0.0)
         tableView.tableFooterView = UIView()
         
         // tableViewCell 自动计算高度
@@ -41,13 +56,50 @@ class ProfileViewController: UIViewController {
         tableView.register(UserInfoCell.self)
         tableView.register(DescCell.self)
     }
+    
+    func setupHeaderView() {
+        
+        bgImageView = UIImageView(frame: CGRect(x: 0, y: -headViewH, width: kScreenWidth, height: headViewH))
+//        bgImageView!.image = UIImage(named: "Image")
+        bgImageView!.kf_setImage(with: URL(string: author.largeAvatar!), options: [KingfisherOptionsInfoItem.transition(ImageTransition.fade(0.25))])
+        
+        let blurEffect = UIBlurEffect(style: .light)
+        blurView = UIVisualEffectView(effect: blurEffect)
+        blurView?.frame = bgImageView!.frame
+        
+        headerImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: headH, height: headH))
+        headerImageView?.center = bgImageView!.center
+//        headerImageView?.image =  UIImage(named: "Image")
+        headerImageView!.kf_setImage(with: URL(string: author.largeAvatar!), options: [KingfisherOptionsInfoItem.transition(ImageTransition.fade(0.25))])
+        headerImageView?.layer.cornerRadius = headH / 2
+        headerImageView?.layer.masksToBounds = true
+        
+        tableView.addSubview(bgImageView!)
+        tableView.addSubview(blurView!)
+        tableView.addSubview(headerImageView!)
+        
+        scale = bgImageView!.bounds.size.width / bgImageView!.bounds.size.height
+
+//            _bgImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, -headViewH, kScreenWidth, headViewH)];
+//            _bgImageView.layer.masksToBounds = YES;
+//            _bgImageView.userInteractionEnabled = YES;
+//            _bgImageView.image = [[UIImage imageNamed:@"123.jpg"] blurImage];
+        
+        
+//            _headerImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, headH, headH)];
+//            self.scale = _bgImageView.bounds.size.width/_bgImageView.bounds.size.height;
+
+        
+            
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    func reloadData() {
+    func requestData() {
         HiShowAPI.sharedInstance.getUserInfo(uid: uid!,
             completion: { userInfo in
                 //
@@ -139,4 +191,27 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
 //            return 44.0
 //        }
 //    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        
+        print(offsetY)
+        if offsetY < -headViewH {
+            
+            bgImageView?.frame = CGRect(x: 0, y: offsetY, width: kScreenWidth, height: -offsetY)
+            blurView?.frame = bgImageView!.frame
+            let conY = scrollView.contentOffset.y + headViewH
+            print("conY:\(conY)")
+            print("scale:\(scale)")
+            
+            let imgH = -offsetY
+            let imgW = imgH * scale!
+            bgImageView?.frame = CGRect(x: -(imgW - kScreenWidth)/2, y: offsetY, width: imgW, height: imgH)
+            blurView?.frame = bgImageView!.frame
+            
+            headerImageView?.frame = CGRect(x: 0, y: 0, width: headH-conY, height: headH-conY)
+            headerImageView?.center = bgImageView!.center
+            headerImageView?.layer.cornerRadius = headerImageView!.bounds.size.height / 2
+        }
+    }
 }

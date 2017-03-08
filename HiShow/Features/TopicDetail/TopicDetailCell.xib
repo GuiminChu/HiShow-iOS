@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="TopicDetailCell" customModule="HiShow" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gxQ-qZ-fbv" customClass="CTDisplayView" customModule="HiShow" customModuleProvider="target">
+                        <rect key="frame" x="15" y="8" width="290" height="27"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="27" id="0Am-nJ-fGy"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="290" id="eIP-oM-M2J"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="gxQ-qZ-fbv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="4aM-gK-jut"/>
+                    <constraint firstAttribute="bottom" secondItem="gxQ-qZ-fbv" secondAttribute="bottom" constant="8" id="mJr-am-jwu"/>
+                    <constraint firstItem="gxQ-qZ-fbv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="nnI-cN-LwB"/>
+                    <constraint firstAttribute="trailing" secondItem="gxQ-qZ-fbv" secondAttribute="trailing" constant="15" id="olo-8R-PTh"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="displayView" destination="gxQ-qZ-fbv" id="HCT-u4-NlQ"/>
+                <outlet property="displayViewWidth" destination="eIP-oM-M2J" id="apY-Wz-T65"/>
+                <outlet property="height" destination="0Am-nJ-fGy" id="O4D-YD-O7n"/>
+            </connections>
+            <point key="canvasLocation" x="-101" y="37"/>
+        </tableViewCell>
+    </objects>
+</document>

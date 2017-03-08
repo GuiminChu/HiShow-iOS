@@ -48,14 +48,14 @@ final class HiShowAPI {
             "start": "\(startIndex)",
             "count": "20"
         ]
-        Alamofire.request("https://api.douban.com/v2/group/haixiuzu/topics", method: .get, parameters: parameters)
+        Alamofire.request("https://api.douban.com/v2/group/433459/topics", method: .get, parameters: parameters)
             .responseJSON { response in
                 switch response.result {
                     
                 case .success(let resultValue):
                     let json = JSON(resultValue)
                     
-                    //                    print(json)
+                                        print(json)
                     let topicModel = TopicModel(fromJson: json)
                     
                     completion(topicModel)
@@ -77,35 +77,10 @@ final class HiShowAPI {
                 case .success(let resultValue):
                     let json = JSON(resultValue)
                     
+                    print(json)
                     let userInfo = UserInfo(fromJson: json)
                     
                     completion(userInfo)
-                    
-                case .failure:
-                    failureHandler?(.networkError, "")
-                }
-        }
-    }
-    
-    func getTopics1(_ envelopInfo: String, requestPackageInfo: String, completion: @escaping (TopicModel) -> Void, failureHandler: FailureHandler?) {
-        
-        let parameters = [
-            "serviceid": "",
-            "dataExchangePackage": "",
-            "token": ""
-        ]
-        
-        Alamofire.request("", method: .post, parameters: parameters)
-            .responseJSON { response in
-                
-                switch response.result {
-                    
-                case .success(let resultValue):
-                    let json = JSON(resultValue)
-                    
-                    let topicModel = TopicModel(fromJson: json)
-                    
-                    completion(topicModel)
                     
                 case .failure:
                     failureHandler?(.networkError, "")

@@ -53,7 +53,7 @@ final class TopicItemCell: UITableViewCell {
         
         nameLabel.text = topicInfo.author.name
         titleLabel.text = topicInfo.title
-        likeCountLabel.text = "\(topicInfo.likeCount)"
+        likeCountLabel.text = "\(topicInfo.likeCount!)"
         
         if let photoAlt = topicInfo.photos.first?.alt, let url = URL(string: photoAlt) {
             topicImageView.kf_setImage(with: url, options: [KingfisherOptionsInfoItem.transition(ImageTransition.fade(0.25))])

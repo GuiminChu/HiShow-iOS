@@ -1,21 +1,24 @@
 PODS:
   - Alamofire (4.0.0)
+  - GDPerformanceView-Swift (1.1.2)
   - Kingfisher (3.0.1)
   - MJRefresh (3.1.12)
   - Navi (1.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
+  - GDPerformanceView-Swift
   - Kingfisher (~> 3.0)
   - MJRefresh
   - Navi (~> 1.0.0)
 
 SPEC CHECKSUMS:
   Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
+  GDPerformanceView-Swift: 18086952416fa8af2df0e7bc8cfdda63afc7e0b6
   Kingfisher: d5a491b45ea453d90a31bd2c0831d5243e73a73f
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   Navi: 476df37605b9af2fea9a7351d6ca81c973cc24e2
 
-PODFILE CHECKSUM: f4676636fa121ee7c6ba2a5e41e63b70e6aab7fd
+PODFILE CHECKSUM: bfab1ea4aafdfe3b4c9a0f8477c56c486438c25e
 
-COCOAPODS: 1.1.0.rc.2
+COCOAPODS: 1.2.0.beta.1
