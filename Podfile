@@ -11,6 +11,7 @@ target 'HiShow' do
     pod 'Kingfisher', '~> 3.0'
     pod 'Navi', '~> 1.0.0'
     pod 'MJRefresh'
+    pod 'SwiftyJSON'
     pod 'GDPerformanceView-Swift'
 
   target 'HiShowTests' do

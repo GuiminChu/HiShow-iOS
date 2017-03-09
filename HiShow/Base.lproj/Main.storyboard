@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Topic-->
+        <!--HiShow-->
         <scene sceneID="2wT-ma-7Ad">
             <objects>
                 <viewController id="ogI-ey-urZ" customClass="TopicsViewController" customModule="HiShow" customModuleProvider="target" sceneMemberID="viewController">
@@ -37,7 +37,7 @@
                             <constraint firstItem="tQQ-O1-iQh" firstAttribute="leading" secondItem="Sxz-gP-DJo" secondAttribute="leading" id="TUP-mI-yPy"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Topic" id="PqK-fN-vTc"/>
+                    <navigationItem key="navigationItem" title="HiShow" id="PqK-fN-vTc"/>
                     <connections>
                         <outlet property="tableView" destination="tQQ-O1-iQh" id="iLm-zz-VIk"/>
                         <segue destination="GJv-I5-Y7S" kind="show" identifier="ToTopicDetailSegue" id="ewA-jQ-dik">
@@ -52,7 +52,7 @@
             </objects>
             <point key="canvasLocation" x="1161" y="558"/>
         </scene>
-        <!--Detail-->
+        <!--Show-->
         <scene sceneID="hFD-vQ-8J8">
             <objects>
                 <viewController id="GJv-I5-Y7S" customClass="TopicDetailViewController" customModule="HiShow" customModuleProvider="target" sceneMemberID="viewController">
@@ -81,7 +81,7 @@
                             <constraint firstItem="CJf-3k-1tN" firstAttribute="leading" secondItem="oLf-EK-TBb" secondAttribute="leading" id="sg1-BL-3Lu"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Detail" id="D9c-YO-gkC"/>
+                    <navigationItem key="navigationItem" title="Show" id="D9c-YO-gkC"/>
                     <connections>
                         <outlet property="tableView" destination="CJf-3k-1tN" id="Xd9-8C-Byw"/>
                     </connections>
@@ -90,7 +90,7 @@
             </objects>
             <point key="canvasLocation" x="2129" y="198"/>
         </scene>
-        <!--Profile-->
+        <!--Hi-->
         <scene sceneID="jlH-7c-xjZ">
             <objects>
                 <viewController id="vNu-Lj-k5s" customClass="ProfileViewController" customModule="HiShow" customModuleProvider="target" sceneMemberID="viewController">
@@ -119,7 +119,7 @@
                             <constraint firstItem="B8r-od-uoO" firstAttribute="leading" secondItem="Dnp-v0-eBu" secondAttribute="leading" id="eSI-9M-LHD"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Profile" id="bNK-7U-sAV"/>
+                    <navigationItem key="navigationItem" title="Hi" id="bNK-7U-sAV"/>
                     <connections>
                         <outlet property="tableView" destination="B8r-od-uoO" id="93c-Zw-x7s"/>
                     </connections>

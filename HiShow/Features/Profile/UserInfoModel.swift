@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 struct UserInfo {
     
@@ -23,7 +24,7 @@ struct UserInfo {
     var signature: String!
     
     init(fromJson json: JSON) {
-        if json == nil {
+        if json == JSON.null {
             return
         }
         

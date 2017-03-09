@@ -185,7 +185,7 @@ extension TopicsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 346
+        return 359
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -1,12 +1,13 @@
 //
 //  TopicModel.swift
-//  HishowZone
+//  HiShow
 //
 //  Created by Chu Guimin on 16/9/6.
 //  Copyright © 2016年 Chu Guimin. All rights reserved.
 //
 
 import Foundation
+import SwiftyJSON
 
 struct TopicModel {
     
@@ -16,7 +17,7 @@ struct TopicModel {
     var total: Int!
     
     init(fromJson json: JSON) {
-        if json == nil {
+        if json == JSON.null {
             return
         }
         
@@ -31,9 +32,9 @@ struct TopicModel {
             // 只展现有照片的话题
             if value.photos.count > 0 {
                 // 过滤掉某些没有营养的广告贴
-//                if value.id != "88091185" && value.id != "79786668" {
+                if value.id != "97583616" && value.id != "79786668" && value.id != "96555462" && value.id != "95243968" && value.id != "91716032" {
                     topics.append(value)
-//                }
+                }
             }
         }
     }
@@ -53,7 +54,7 @@ struct Topic {
     var updated: String!
     
     init(fromJson json: JSON) {
-        if json == nil {
+        if json == JSON.null {
             return
         }
         
@@ -92,7 +93,7 @@ struct Photo {
     var size: PhotoSize!
     
     init(fromJson json: JSON) {
-        if json == nil {
+        if json == JSON.null {
             return
         }
         
@@ -142,7 +143,7 @@ struct Author {
     var name: String?
     
     init(fromJson json: JSON) {
-        if json == nil {
+        if json == JSON.null {
             return
         }
         

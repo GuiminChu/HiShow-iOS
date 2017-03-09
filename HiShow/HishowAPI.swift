@@ -1,6 +1,6 @@
 //
-//  HishowAPI.swift
-//  HishowZone
+//  HiShowAPI.swift
+//  HiShow
 //
 //  Created by Chu Guimin on 16/9/6.
 //  Copyright © 2016年 Chu Guimin. All rights reserved.
@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 public enum Reason: CustomStringConvertible {
     case networkError
@@ -55,7 +56,7 @@ final class HiShowAPI {
                 case .success(let resultValue):
                     let json = JSON(resultValue)
                     
-                                        print(json)
+                    // print(json)
                     let topicModel = TopicModel(fromJson: json)
                     
                     completion(topicModel)

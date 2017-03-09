@@ -11,11 +11,11 @@ import UIKit
 class CTFrameParser: NSObject {
     
     /// 解析模板文件
-    class func parseTemplateFile(topic: Topic, config: CTFrameParserConfig) -> CoreTextData {
+    class func parseTopicInfo(topic: Topic, config: CTFrameParserConfig) -> CoreTextData {
         var imageArray = [CoreTextImageData]()
 //        var linkArray  = [CoreTextLinkData]()
         
-        let content = self.loadTopicTuples(topic: topic, config: config, imageArray: &imageArray)
+        let content = self.loadTopicInfo(topic: topic, config: config, imageArray: &imageArray)
         
         let coreTextData = self.parse(content: content, config: config)
         
@@ -32,8 +32,11 @@ class CTFrameParser: NSObject {
             return (str, indexArray)
         }
         
+        // 删除文本中的 emoji
+        let resultWithoutEmoji = removeEmoji(string: str)
+        
         // 删除文本中的换行符"\r" (注：\r不占用字符)
-        var result = str.replacingOccurrences(of: "\r", with: "")
+        var result = resultWithoutEmoji.replacingOccurrences(of: "\r", with: "")
         
         while let range = result.range(of: "<图片") {
             indexArray.append(result.characters.distance(from: result.startIndex, to: range.lowerBound))
@@ -50,16 +53,44 @@ class CTFrameParser: NSObject {
         return (result, indexArray)
     }
     
-    /// 加载模板文件
-    class func loadTopicTuples(topic: Topic, config: CTFrameParserConfig, imageArray: inout [CoreTextImageData]) -> NSAttributedString {
+    /// 删除字符串中的 emoji 表情
+    ///
+    /// - Parameter string:  "emoji 😀"
+    /// - Returns:  "emoji"
+    private static func removeEmoji(string: String) -> String {
+
+        
+        let emojiPattern1 = "\\U00010000-\\U0010FFFF"   // Emoticons
+        let emojiPattern2 = "\\u2100-\\u27BF"           // Misc symbols and Dingbats
+        let emojiPattern3 = "\\u200D\\uFE0f"            // Special Characters
+        let emojiPattern4 = "\\U0001F595-\\U0001F596"   // (🖕..🖖)
+        
+        let pattern = "[\(emojiPattern1)\(emojiPattern2)\(emojiPattern3)\(emojiPattern4)]"
+
+        // let emojiVariants = "\(EmojiData.EmojiPatterns.joined(separator: ""))\\uFE0F)"
+        
+        let regex = try! NSRegularExpression(pattern: pattern, options: [])
+        let replaced = regex.stringByReplacingMatches(in: string, options: [], range: NSRange(0..<string.utf16.count), withTemplate: "")
+        
+        return replaced
+    }
+    
+    /// 根据话题信息生成 NSAttributedString 实例
+    ///
+    /// - Parameters:
+    ///   - topic: 话题
+    ///   - config: 配置
+    ///   - imageArray: 图片数组
+    /// - Returns: NSAttributedString实例
+    private class func loadTopicInfo(topic: Topic, config: CTFrameParserConfig, imageArray: inout [CoreTextImageData]) -> NSAttributedString {
         
         let result = NSMutableAttributedString()
         
         if let content = topic.content {
             
-            print(content)
+            // print(content)
             let tuples = parseTopicContentString(content)
-            print(tuples)
+            // print(tuples)
             
             // 处理文本
             let attributes = self.attributes(config: config)
@@ -77,9 +108,7 @@ class CTFrameParser: NSObject {
                 imageData.imagePosition = CGRect(x: 0.0, y: 0.0, width: 0.0, height: 0.0)
                 imageArray.append(imageData)
                 
-//                addCTRunDelegateWith(imageStr: UrlImageName, indentifier: UrlImageName, insertIndex: insertIndex + offset, attribute: mutableAttributeString)
                 let subStr = self.parseImageAttributedCotnent(photoInfo: photoInfo, config: config)
-//                result.append(subStr)
                 result.insert(subStr, at: insertIndex + offset + 1)
             }
         }
@@ -87,7 +116,14 @@ class CTFrameParser: NSObject {
         return result
     }
     
-    static func parse(content: NSAttributedString, config: CTFrameParserConfig) -> CoreTextData {
+    
+    /// 根据富文本生成 CoreTextData 实例
+    ///
+    /// - Parameters:
+    ///   - content: 富文本
+    ///   - config: 配置
+    /// - Returns: 需要渲染的数据
+    private static func parse(content: NSAttributedString, config: CTFrameParserConfig) -> CoreTextData {
         // 创建 CTFramesetter 实例
         let framesetter = CTFramesetterCreateWithAttributedString(content)
         
@@ -106,7 +142,15 @@ class CTFrameParser: NSObject {
         return data
     }
     
-    class func creatFrame(framesetter: CTFramesetter, config: CTFrameParserConfig, height: CGFloat) -> CTFrame {
+    
+    /// 创建矩形文字区域
+    ///
+    /// - Parameters:
+    ///   - framesetter: framesetter
+    ///   - config: 配置
+    ///   - height: 高度
+    /// - Returns: 矩形文字区域
+    private class func creatFrame(framesetter: CTFramesetter, config: CTFrameParserConfig, height: CGFloat) -> CTFrame {
         let path = CGMutablePath()
         path.addRect(CGRect(x: 0, y: 0, width: config.width, height: height))
         
@@ -117,7 +161,7 @@ class CTFrameParser: NSObject {
     ///
     /// - Parameter config: 配置信息
     /// - Returns: 文字基本属性
-    class func attributes(config: CTFrameParserConfig) -> [String: Any] {
+    private class func attributes(config: CTFrameParserConfig) -> [String: Any] {
         // 字体大小
         let fontSize = config.fontSize
         let uiFont = UIFont.systemFont(ofSize: fontSize)
@@ -165,7 +209,7 @@ class CTFrameParser: NSObject {
     ///   - dict: 文字属性字典
     ///   - config: 配置信息
     /// - Returns: 图片富文本
-    class func parseImageAttributedCotnent(photoInfo: Photo, config: CTFrameParserConfig) -> NSAttributedString {
+    private class func parseImageAttributedCotnent(photoInfo: Photo, config: CTFrameParserConfig) -> NSAttributedString {
         
         let imageWidth = config.width
         let imageHeight = CGFloat(photoInfo.size.height) / CGFloat(photoInfo.size.width) * imageWidth
@@ -189,31 +233,12 @@ class CTFrameParser: NSObject {
         
         let selfPtr = UnsafeMutableRawPointer(Unmanaged.passRetained(pic).toOpaque())
         
-        //1:设置CTRun的代理,为图片设置CTRunDelegate,delegate决定留给图片的空间大小
         // 创建 RunDelegate, 传入 imageCallback 中图片数据
         let runDelegate = CTRunDelegateCreate(&callbacks, selfPtr)
-        
-//        let replaceChar = 0xFFFC
-//        let content = String(replaceChar)
-//        let attributes = self.attributes(config: config)
-//        let space = NSMutableAttributedString(string: " ", attributes: attributes)
         
         
         let imageAttributedString = NSMutableAttributedString(string: " ")
         imageAttributedString.addAttribute(kCTRunDelegateAttributeName as String, value: runDelegate!, range: NSMakeRange(0, 1))
-        
-//        CFAttributedStringSetAttribute(space, CFRangeMake(0, 1), kCTRunDelegateAttributeName, runDelegate)
-        
-        
-        //2 为每个图片创建一个空的string占位
-//        let imageAttributedString = NSMutableAttributedString(string: " ")
-//        imageAttributedString.addAttribute(kCTRunDelegateAttributeName as String, value: runDelegate!, range: NSMakeRange(0, 1))
-//        
-//        //3:添加属性，在CTRun中可以识别出这个字符是图片
-//        //        imageAttributedString.addAttribute(indentifier, value: imageName, range: NSMakeRange(0, 1))
-//        //4:在index处插入图片
-//        attribute.insert(imageAttributedString, at: insertIndex)
-        
         
         return imageAttributedString
     }

@@ -15,17 +15,17 @@ class CTDisplayView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        setupEvents()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
+        setupEvents()
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        setupEvents()
     }
     
     override func draw(_ rect: CGRect) {
@@ -49,7 +49,7 @@ class CTDisplayView: UIView {
                 } else if let imageUrl = imageData.imageUrl {
                     // 网络图片的绘制也很简单如果没有下载,使用图占位，然后去下载，下载好了重绘就OK了.
                     if imageData.image == nil {
-                        imageData.image = UIImage(named:"Image") //灰色图片占位
+                        imageData.image = UIImage(named:"default_image") //灰色图片占位
                         
                         if let url = URL(string: imageUrl) {
                             
@@ -60,7 +60,6 @@ class CTDisplayView: UIView {
                                     DispatchQueue.main.sync {
                                         imageData.image = UIImage(data: data)
                                         self.setNeedsDisplay()  // 下载完成后重绘
-                                        print("h3")
                                     }
                                 }
                             }).resume()
@@ -78,6 +77,34 @@ class CTDisplayView: UIView {
                 }
                 
                 context.draw(imageData.image!.cgImage!, in: imageData.imagePosition)
+            }
+        }
+    }
+    
+    private func setupEvents() {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(userTapGestureDetected(recognizer:)))
+        self.addGestureRecognizer(tapGestureRecognizer)
+        self.isUserInteractionEnabled = true
+    }
+    
+    func userTapGestureDetected(recognizer: UITapGestureRecognizer) {
+        let point = recognizer.location(in: self)
+        
+        if let imageArray = data?.imageArray {
+            for imageData in imageArray {
+                // 翻转坐标系，因为 imageData 中的坐标是 CoreText 的坐标系
+                let imageRect = imageData.imagePosition
+                var imagePosition = imageRect.origin
+                imagePosition.y = self.bounds.size.height - imageRect.origin.y - imageRect.size.height
+                let rect = CGRect(x: imagePosition.x, y: imagePosition.y, width: imageRect.size.width, height: imageRect.size.height)
+                if rect.contains(point) {
+                    
+                    let userInfo = ["imageData": imageData, "displayView": self]
+                    
+                    NotificationCenter.default.post(name: HiShowConfig.NotificationName.coreTextImagePressedNotification, object: self, userInfo: userInfo)
+                    
+                    break
+                }
             }
         }
     }

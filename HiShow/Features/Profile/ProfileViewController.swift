@@ -1,12 +1,12 @@
 //
 //  ProfileViewController.swift
-//  HishowZone
+//  HiShow
 //
 //  Created by Chu Guimin on 16/9/9.
 //  Copyright © 2016年 Chu Guimin. All rights reserved.
 //
 
-let headViewH  =  kScreenWidth / 5 * 2
+let headViewH =  kScreenWidth / 5 * 2
 let headH = kScreenWidth / 5
 
 import UIKit

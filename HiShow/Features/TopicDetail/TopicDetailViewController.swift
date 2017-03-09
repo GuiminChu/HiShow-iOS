@@ -24,8 +24,47 @@ class TopicDetailViewController: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         
 //        tableView.register(TopicContentCell.self)
+        tableView.register(TopicTitleCell.self)
         tableView.register(TopicDetailCell.self)
 
+        NotificationCenter.default.addObserver(self, selector: #selector(imagePressed(_:)), name: HiShowConfig.NotificationName.coreTextImagePressedNotification, object: nil)
+    }
+    
+    func imagePressed(_ notification: Notification) {
+        let userInfo = notification.userInfo
+        
+        guard let imageData =  userInfo?["imageData"] as? CoreTextImageData else {
+            return
+        }
+        
+        
+            
+//            guard imageView.image != R.Image.ImagePlaceholder else {
+//                return
+//            }
+            
+            
+        guard let displayView = userInfo?["displayView"] as? CTDisplayView else {
+            return
+        }
+        
+        // 翻转坐标系，因为 imageData 中的坐标是 CoreText 的坐标系
+        let imageRect = imageData.imagePosition
+        var imagePosition = imageRect.origin
+        imagePosition.y = displayView.bounds.size.height - imageRect.origin.y - imageRect.size.height
+        let rect = CGRect(x: imagePosition.x, y: imagePosition.y, width: imageRect.size.width, height: imageRect.size.height)
+        
+        var imageInfo = ImageInfo()
+        imageInfo.image = imageData.image
+        // imageInfo.originalData = imageView.originalData
+        imageInfo.referenceRect = rect
+        imageInfo.referenceView = displayView
+        let imageVC = ImageViewingController(imageInfo: imageInfo)
+        imageVC.presented(by: self)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: HiShowConfig.NotificationName.coreTextImagePressedNotification, object: nil)
     }
 }
 
@@ -36,17 +75,21 @@ extension TopicDetailViewController: UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: TopicContentCell.reuseIdentifier, for: indexPath) as! TopicContentCell
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: TopicDetailCell.reuseIdentifier, for: indexPath) as! TopicDetailCell
-        
-        // Configure the cell
-        cell.configure(topic: topic!)
-    
-        return cell
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: TopicTitleCell.reuseIdentifier, for: indexPath) as! TopicTitleCell
+            cell.configure(topicInfo: topic!)
+            return cell
+        } else if indexPath.row == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: TopicDetailCell.reuseIdentifier, for: indexPath) as! TopicDetailCell
+            cell.configure(topic: topic!)
+            return cell
+        } else {
+            return UITableViewCell()
+        }
     }
 }

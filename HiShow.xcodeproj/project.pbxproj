@@ -10,14 +10,19 @@
 		0CCC05357F354D92E288061F /* Pods_HiShowUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C000A4D17020E7EEC09D2DB9 /* Pods_HiShowUITests.framework */; };
 		8EA632A8E91927A08914177D /* Pods_HiShowTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1EC226A6D0D94E812C5BDBD /* Pods_HiShowTests.framework */; };
 		971CC22CB45E056FDE8B1FA8 /* Pods_HiShow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD26E1E68D34F7B7D99856A /* Pods_HiShow.framework */; };
-		AE59997B1E65709F00B1F34E /* TopicContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE59997A1E65709F00B1F34E /* TopicContentView.swift */; };
 		AE59997E1E6570C900B1F34E /* TopicDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE59997C1E6570C900B1F34E /* TopicDetailCell.swift */; };
 		AE59997F1E6570C900B1F34E /* TopicDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE59997D1E6570C900B1F34E /* TopicDetailCell.xib */; };
-		AEAD9E591E6FCCB3009211A0 /* CoreTextImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAD9E581E6FCCB3009211A0 /* CoreTextImageData.swift */; };
-		AEAD9E5B1E6FCD22009211A0 /* CoreTextData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAD9E5A1E6FCD22009211A0 /* CoreTextData.swift */; };
-		AEAD9E5D1E6FCE00009211A0 /* CTFrameParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAD9E5C1E6FCE00009211A0 /* CTFrameParser.swift */; };
-		AEAD9E5F1E6FCE61009211A0 /* CTFrameParserConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAD9E5E1E6FCE61009211A0 /* CTFrameParserConfig.swift */; };
-		AEAD9E611E6FD884009211A0 /* CTDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAD9E601E6FD884009211A0 /* CTDisplayView.swift */; };
+		AE61450B1E70F6A300C28667 /* ImageViewingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE61450A1E70F6A300C28667 /* ImageViewingController.swift */; };
+		AE61450D1E70FAE100C28667 /* HiShowConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE61450C1E70FAE100C28667 /* HiShowConfig.swift */; };
+		AE61450F1E7104DB00C28667 /* HiShowAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE61450E1E7104DB00C28667 /* HiShowAPI.swift */; };
+		AE6145121E71422700C28667 /* EmojiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6145111E71422700C28667 /* EmojiData.swift */; };
+		AE61451B1E714CD100C28667 /* CoreTextData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6145161E714CD100C28667 /* CoreTextData.swift */; };
+		AE61451C1E714CD100C28667 /* CoreTextImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6145171E714CD100C28667 /* CoreTextImageData.swift */; };
+		AE61451D1E714CD100C28667 /* CTDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6145181E714CD100C28667 /* CTDisplayView.swift */; };
+		AE61451E1E714CD100C28667 /* CTFrameParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6145191E714CD100C28667 /* CTFrameParser.swift */; };
+		AE61451F1E714CD100C28667 /* CTFrameParserConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE61451A1E714CD100C28667 /* CTFrameParserConfig.swift */; };
+		AE6145221E715BA500C28667 /* TopicTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6145201E715BA500C28667 /* TopicTitleCell.swift */; };
+		AE6145231E715BA500C28667 /* TopicTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE6145211E715BA500C28667 /* TopicTitleCell.xib */; };
 		CE9E3A481D921710009CE13B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E3A471D921710009CE13B /* AppDelegate.swift */; };
 		CE9E3A4D1D921710009CE13B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9E3A4B1D921710009CE13B /* Main.storyboard */; };
 		CE9E3A4F1D921710009CE13B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE9E3A4E1D921710009CE13B /* Assets.xcassets */; };
@@ -39,11 +44,9 @@
 		CE9E3AA01D9222C4009CE13B /* TopicItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9E3A891D9222C4009CE13B /* TopicItemCell.xib */; };
 		CE9E3AA11D9222C4009CE13B /* TopicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E3A8A1D9222C4009CE13B /* TopicModel.swift */; };
 		CE9E3AA21D9222C4009CE13B /* TopicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E3A8B1D9222C4009CE13B /* TopicsViewController.swift */; };
-		CE9E3AA41D9222C4009CE13B /* HishowAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E3A8D1D9222C4009CE13B /* HishowAPI.swift */; };
 		CE9E3AA51D9222C4009CE13B /* ExUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E3A901D9222C4009CE13B /* ExUIView.swift */; };
 		CE9E3AA61D9222C4009CE13B /* ExUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E3A911D9222C4009CE13B /* ExUIViewController.swift */; };
 		CE9E3AA71D9222C4009CE13B /* RoundAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E3A931D9222C4009CE13B /* RoundAvatar.swift */; };
-		CE9E3AA91D922915009CE13B /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E3AA81D922915009CE13B /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,14 +72,19 @@
 		6CC7CDB3D5D2B8AFE00E285D /* Pods-HiShowTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiShowTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HiShowTests/Pods-HiShowTests.release.xcconfig"; sourceTree = "<group>"; };
 		6D8D1BF75CC8AE620D8EFA1A /* Pods-HiShowTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiShowTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HiShowTests/Pods-HiShowTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A1EC226A6D0D94E812C5BDBD /* Pods_HiShowTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HiShowTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE59997A1E65709F00B1F34E /* TopicContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicContentView.swift; sourceTree = "<group>"; };
 		AE59997C1E6570C900B1F34E /* TopicDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailCell.swift; sourceTree = "<group>"; };
 		AE59997D1E6570C900B1F34E /* TopicDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicDetailCell.xib; sourceTree = "<group>"; };
-		AEAD9E581E6FCCB3009211A0 /* CoreTextImageData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreTextImageData.swift; sourceTree = "<group>"; };
-		AEAD9E5A1E6FCD22009211A0 /* CoreTextData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreTextData.swift; sourceTree = "<group>"; };
-		AEAD9E5C1E6FCE00009211A0 /* CTFrameParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTFrameParser.swift; sourceTree = "<group>"; };
-		AEAD9E5E1E6FCE61009211A0 /* CTFrameParserConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTFrameParserConfig.swift; sourceTree = "<group>"; };
-		AEAD9E601E6FD884009211A0 /* CTDisplayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTDisplayView.swift; sourceTree = "<group>"; };
+		AE61450A1E70F6A300C28667 /* ImageViewingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewingController.swift; sourceTree = "<group>"; };
+		AE61450C1E70FAE100C28667 /* HiShowConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HiShowConfig.swift; sourceTree = "<group>"; };
+		AE61450E1E7104DB00C28667 /* HiShowAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HiShowAPI.swift; sourceTree = "<group>"; };
+		AE6145111E71422700C28667 /* EmojiData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiData.swift; sourceTree = "<group>"; };
+		AE6145161E714CD100C28667 /* CoreTextData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreTextData.swift; sourceTree = "<group>"; };
+		AE6145171E714CD100C28667 /* CoreTextImageData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreTextImageData.swift; sourceTree = "<group>"; };
+		AE6145181E714CD100C28667 /* CTDisplayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTDisplayView.swift; sourceTree = "<group>"; };
+		AE6145191E714CD100C28667 /* CTFrameParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTFrameParser.swift; sourceTree = "<group>"; };
+		AE61451A1E714CD100C28667 /* CTFrameParserConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTFrameParserConfig.swift; sourceTree = "<group>"; };
+		AE6145201E715BA500C28667 /* TopicTitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicTitleCell.swift; sourceTree = "<group>"; };
+		AE6145211E715BA500C28667 /* TopicTitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicTitleCell.xib; sourceTree = "<group>"; };
 		C000A4D17020E7EEC09D2DB9 /* Pods_HiShowUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HiShowUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5DF6966B6A5F2DD967CA742 /* Pods-HiShowUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiShowUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HiShowUITests/Pods-HiShowUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CE9E3A441D921710009CE13B /* HiShow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiShow.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,11 +115,9 @@
 		CE9E3A891D9222C4009CE13B /* TopicItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicItemCell.xib; sourceTree = "<group>"; };
 		CE9E3A8A1D9222C4009CE13B /* TopicModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicModel.swift; sourceTree = "<group>"; };
 		CE9E3A8B1D9222C4009CE13B /* TopicsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicsViewController.swift; sourceTree = "<group>"; };
-		CE9E3A8D1D9222C4009CE13B /* HishowAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HishowAPI.swift; sourceTree = "<group>"; };
 		CE9E3A901D9222C4009CE13B /* ExUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExUIView.swift; sourceTree = "<group>"; };
 		CE9E3A911D9222C4009CE13B /* ExUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExUIViewController.swift; sourceTree = "<group>"; };
 		CE9E3A931D9222C4009CE13B /* RoundAvatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundAvatar.swift; sourceTree = "<group>"; };
-		CE9E3AA81D922915009CE13B /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		DB2CDE92A7B20005513FCB7E /* Pods-HiShow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiShow.release.xcconfig"; path = "Pods/Target Support Files/Pods-HiShow/Pods-HiShow.release.xcconfig"; sourceTree = "<group>"; };
 		F252F14F7138405AE78B758F /* Pods-HiShow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiShow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HiShow/Pods-HiShow.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,6 +163,26 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		AE6145101E71422700C28667 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				AE6145111E71422700C28667 /* EmojiData.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		AE6145151E714CD100C28667 /* CoreText */ = {
+			isa = PBXGroup;
+			children = (
+				AE6145161E714CD100C28667 /* CoreTextData.swift */,
+				AE6145171E714CD100C28667 /* CoreTextImageData.swift */,
+				AE6145181E714CD100C28667 /* CTDisplayView.swift */,
+				AE6145191E714CD100C28667 /* CTFrameParser.swift */,
+				AE61451A1E714CD100C28667 /* CTFrameParserConfig.swift */,
+			);
+			path = CoreText;
+			sourceTree = "<group>";
+		};
 		BB87DD098F6EB50D1A38A5BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,9 +219,9 @@
 			isa = PBXGroup;
 			children = (
 				CE9E3A471D921710009CE13B /* AppDelegate.swift */,
-				CE9E3A8D1D9222C4009CE13B /* HishowAPI.swift */,
+				AE61450C1E70FAE100C28667 /* HiShowConfig.swift */,
+				AE61450E1E7104DB00C28667 /* HiShowAPI.swift */,
 				CE9E3A751D92221C009CE13B /* HiShow-Bridging-Header.h */,
-				CE9E3AA81D922915009CE13B /* SwiftyJSON.swift */,
 				CE9E3A791D9222C4009CE13B /* Features */,
 				CE9E3A8E1D9222C4009CE13B /* General */,
 				CE9E3A4B1D921710009CE13B /* Main.storyboard */,
@@ -252,17 +278,14 @@
 		CE9E3A831D9222C4009CE13B /* TopicDetail */ = {
 			isa = PBXGroup;
 			children = (
+				AE6145151E714CD100C28667 /* CoreText */,
 				CE9E3A841D9222C4009CE13B /* TopicContentCell.swift */,
 				CE9E3A851D9222C4009CE13B /* TopicContentCell.xib */,
 				CE9E3A861D9222C4009CE13B /* TopicDetailViewController.swift */,
-				AE59997A1E65709F00B1F34E /* TopicContentView.swift */,
 				AE59997C1E6570C900B1F34E /* TopicDetailCell.swift */,
 				AE59997D1E6570C900B1F34E /* TopicDetailCell.xib */,
-				AEAD9E5E1E6FCE61009211A0 /* CTFrameParserConfig.swift */,
-				AEAD9E581E6FCCB3009211A0 /* CoreTextImageData.swift */,
-				AEAD9E5A1E6FCD22009211A0 /* CoreTextData.swift */,
-				AEAD9E5C1E6FCE00009211A0 /* CTFrameParser.swift */,
-				AEAD9E601E6FD884009211A0 /* CTDisplayView.swift */,
+				AE6145201E715BA500C28667 /* TopicTitleCell.swift */,
+				AE6145211E715BA500C28667 /* TopicTitleCell.xib */,
 			);
 			path = TopicDetail;
 			sourceTree = "<group>";
@@ -281,6 +304,7 @@
 		CE9E3A8E1D9222C4009CE13B /* General */ = {
 			isa = PBXGroup;
 			children = (
+				AE6145101E71422700C28667 /* Helper */,
 				CE9E3A8F1D9222C4009CE13B /* Extensions */,
 				CE9E3A921D9222C4009CE13B /* View */,
 			);
@@ -300,6 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				CE9E3A931D9222C4009CE13B /* RoundAvatar.swift */,
+				AE61450A1E70F6A300C28667 /* ImageViewingController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -376,7 +401,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = cgm;
 				TargetAttributes = {
 					CE9E3A431D921710009CE13B = {
@@ -426,6 +451,7 @@
 				CE9E3A951D9222C4009CE13B /* DescCell.xib in Resources */,
 				CE9E3A521D921710009CE13B /* LaunchScreen.storyboard in Resources */,
 				CE9E3A9A1D9222C4009CE13B /* UserInfoCell.xib in Resources */,
+				AE6145231E715BA500C28667 /* TopicTitleCell.xib in Resources */,
 				CE9E3A9D1D9222C4009CE13B /* TopicContentCell.xib in Resources */,
 				CE9E3A4F1D921710009CE13B /* Assets.xcassets in Resources */,
 				AE59997F1E6570C900B1F34E /* TopicDetailCell.xib in Resources */,
@@ -594,28 +620,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE9E3AA51D9222C4009CE13B /* ExUIView.swift in Sources */,
-				AEAD9E5B1E6FCD22009211A0 /* CoreTextData.swift in Sources */,
+				AE6145121E71422700C28667 /* EmojiData.swift in Sources */,
 				CE9E3A941D9222C4009CE13B /* DescCell.swift in Sources */,
 				CE9E3AA11D9222C4009CE13B /* TopicModel.swift in Sources */,
 				CE9E3AA71D9222C4009CE13B /* RoundAvatar.swift in Sources */,
-				AEAD9E591E6FCCB3009211A0 /* CoreTextImageData.swift in Sources */,
 				CE9E3AA21D9222C4009CE13B /* TopicsViewController.swift in Sources */,
 				CE9E3A9E1D9222C4009CE13B /* TopicDetailViewController.swift in Sources */,
 				AE59997E1E6570C900B1F34E /* TopicDetailCell.swift in Sources */,
 				CE9E3A991D9222C4009CE13B /* UserInfoCell.swift in Sources */,
-				AEAD9E5D1E6FCE00009211A0 /* CTFrameParser.swift in Sources */,
 				CE9E3A9F1D9222C4009CE13B /* TopicItemCell.swift in Sources */,
-				AE59997B1E65709F00B1F34E /* TopicContentView.swift in Sources */,
+				AE61451F1E714CD100C28667 /* CTFrameParserConfig.swift in Sources */,
+				AE61450F1E7104DB00C28667 /* HiShowAPI.swift in Sources */,
 				CE9E3A9C1D9222C4009CE13B /* TopicContentCell.swift in Sources */,
+				AE61451E1E714CD100C28667 /* CTFrameParser.swift in Sources */,
 				CE9E3A981D9222C4009CE13B /* ProfileViewController.swift in Sources */,
-				AEAD9E611E6FD884009211A0 /* CTDisplayView.swift in Sources */,
 				CE9E3A9B1D9222C4009CE13B /* UserInfoModel.swift in Sources */,
-				CE9E3AA41D9222C4009CE13B /* HishowAPI.swift in Sources */,
+				AE61451D1E714CD100C28667 /* CTDisplayView.swift in Sources */,
+				AE6145221E715BA500C28667 /* TopicTitleCell.swift in Sources */,
+				AE61450D1E70FAE100C28667 /* HiShowConfig.swift in Sources */,
 				CE9E3A961D9222C4009CE13B /* ProfileAvatarCell.swift in Sources */,
-				CE9E3AA91D922915009CE13B /* SwiftyJSON.swift in Sources */,
-				AEAD9E5F1E6FCE61009211A0 /* CTFrameParserConfig.swift in Sources */,
+				AE61451B1E714CD100C28667 /* CoreTextData.swift in Sources */,
 				CE9E3AA61D9222C4009CE13B /* ExUIViewController.swift in Sources */,
 				CE9E3A481D921710009CE13B /* AppDelegate.swift in Sources */,
+				AE61450B1E70F6A300C28667 /* ImageViewingController.swift in Sources */,
+				AE61451C1E714CD100C28667 /* CoreTextImageData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -688,6 +716,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -737,6 +766,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

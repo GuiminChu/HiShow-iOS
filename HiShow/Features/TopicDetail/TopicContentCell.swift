@@ -11,9 +11,6 @@
 import UIKit
 import Kingfisher
 
-let kScreenWidth = UIScreen.main.bounds.width
-let kScreenHeight = UIScreen.main.bounds.height
-
 class TopicContentCell: UITableViewCell {
 
     @IBOutlet weak var contentLabel: UILabel!
