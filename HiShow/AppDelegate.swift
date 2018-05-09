@@ -18,10 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        application.statusBarStyle = UIStatusBarStyle.lightContent
-        UINavigationBar.appearance().barTintColor = UIColor.black
-        UINavigationBar.appearance().tintColor = UIColor.white
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+//        application.statusBarStyle = UIStatusBarStyle.lightContent
+//        UINavigationBar.appearance().barTintColor = UIColor.black
+//        UINavigationBar.appearance().tintColor = UIColor.white
+//        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        setNavBarAppearence()
         
         #if DEBUG
             GDPerformanceMonitor.sharedInstance.startMonitoring()
@@ -35,6 +36,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         #endif
         
         return true
+    }
+    
+    func setNavBarAppearence() {
+        // 设置导航栏默认的背景颜色
+//        WRNavigationBar.defaultNavBarBarTintColor = UIColor.init(red: 0/255.0, green: 175/255.0, blue: 240/255.0, alpha: 1)
+        WRNavigationBar.defaultNavBarBarTintColor = .black
+        // 设置导航栏所有按钮的默认颜色
+        WRNavigationBar.defaultNavBarTintColor = .white
+        // 设置导航栏标题默认颜色
+        WRNavigationBar.defaultNavBarTitleColor = .white
+        // 统一设置状态栏样式
+        WRNavigationBar.defaultStatusBarStyle = .lightContent
+        // 如果需要设置导航栏底部分割线隐藏，可以在这里统一设置
+        WRNavigationBar.defaultShadowImageHidden = false
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -61,7 +76,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             GDPerformanceMonitor.sharedInstance.stopMonitoring()
         #endif
     }
-
-
 }
-

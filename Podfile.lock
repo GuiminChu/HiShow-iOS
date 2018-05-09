@@ -1,27 +1,40 @@
 PODS:
-  - Alamofire (4.0.0)
-  - GDPerformanceView-Swift (1.1.2)
-  - Kingfisher (3.0.1)
-  - MJRefresh (3.1.12)
-  - Navi (1.0.0)
+  - Alamofire (4.7.2)
+  - ESPullToRefresh (2.7)
+  - FaceAware (1.2.0)
+  - GDPerformanceView-Swift (1.3.2)
+  - Kingfisher (4.7.0)
+  - Navi (1.1.1)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.0)
-  - GDPerformanceView-Swift
-  - Kingfisher (~> 3.0)
-  - MJRefresh
-  - Navi (~> 1.0.0)
+  - Alamofire (~> 4.7)
+  - ESPullToRefresh
+  - FaceAware
+  - GDPerformanceView-Swift (~> 1.3)
+  - Kingfisher (~> 4.7)
+  - Navi (~> 1.1)
   - SwiftyJSON
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - ESPullToRefresh
+    - FaceAware
+    - GDPerformanceView-Swift
+    - Kingfisher
+    - Navi
+    - SwiftyJSON
+
 SPEC CHECKSUMS:
-  Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
-  GDPerformanceView-Swift: 18086952416fa8af2df0e7bc8cfdda63afc7e0b6
-  Kingfisher: d5a491b45ea453d90a31bd2c0831d5243e73a73f
-  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
-  Navi: 476df37605b9af2fea9a7351d6ca81c973cc24e2
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  ESPullToRefresh: 119e2710b82b75536aab2bbe4883ba119fca35c8
+  FaceAware: 421436f9d16aacdb26ffcf8e5a39a1dd68630395
+  GDPerformanceView-Swift: a74cd679587b199e4526492b6e68ce61593c6123
+  Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
+  Navi: 9e9bd67fb17fabb31a0fca15c39e27de7bc03e94
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 8307e408a089ddff157af967e865d4dfd8471dc0
+PODFILE CHECKSUM: d20e8e6807d4cf98c25ea9a977843447514cb9ab
 
-COCOAPODS: 1.2.0.beta.1
+COCOAPODS: 1.5.0.beta.1

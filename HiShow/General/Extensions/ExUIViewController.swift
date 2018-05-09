@@ -6,7 +6,7 @@
 //  Copyright © 2016年 Chu Guimin. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol SegueHandlerType {
     associatedtype SegueIdentifier: RawRepresentable

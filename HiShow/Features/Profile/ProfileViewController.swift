@@ -35,9 +35,30 @@ class ProfileViewController: UIViewController {
         }
     }
 
+//    lazy var navBar = WRCustomNavigationBar.CustomNavigationBar()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        navBarBackgroundAlpha = 0
+        
+//        navigationController?.navigationBar.isHidden = true
+//        automaticallyAdjustsScrollViewInsets = false
+//        navBar.wr_setBackgroundAlpha(alpha: 0)
+//        navBar.wr_setLeftButton(title: "<<", titleColor: UIColor.white)
+//        view.addSubview(navBar)
+        
+        // 设置导航栏颜色
+        navBarBarTintColor = UIColor.init(red: 247/255.0, green: 247/255.0, blue: 247/255.0, alpha: 1.0)
+        
+        // 设置初始导航栏透明度
+        navBarBackgroundAlpha = 0
+        
+        // 设置导航栏按钮和标题颜色
+        navBarTintColor = .white
+        
+        navBarShadowImageHidden = true
+
         setupTableView()
         setupHeaderView()
         
@@ -61,7 +82,7 @@ class ProfileViewController: UIViewController {
         
         bgImageView = UIImageView(frame: CGRect(x: 0, y: -headViewH, width: kScreenWidth, height: headViewH))
 //        bgImageView!.image = UIImage(named: "Image")
-        bgImageView!.kf_setImage(with: URL(string: author.largeAvatar!), options: [KingfisherOptionsInfoItem.transition(ImageTransition.fade(0.25))])
+        bgImageView!.kf.setImage(with: URL(string: author.largeAvatar!), options: [KingfisherOptionsInfoItem.transition(ImageTransition.fade(0.25))])
         
         let blurEffect = UIBlurEffect(style: .light)
         blurView = UIVisualEffectView(effect: blurEffect)
@@ -70,7 +91,7 @@ class ProfileViewController: UIViewController {
         headerImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: headH, height: headH))
         headerImageView?.center = bgImageView!.center
 //        headerImageView?.image =  UIImage(named: "Image")
-        headerImageView!.kf_setImage(with: URL(string: author.largeAvatar!), options: [KingfisherOptionsInfoItem.transition(ImageTransition.fade(0.25))])
+        headerImageView!.kf.setImage(with: URL(string: author.largeAvatar!), options: [KingfisherOptionsInfoItem.transition(ImageTransition.fade(0.25))])
         headerImageView?.layer.cornerRadius = headH / 2
         headerImageView?.layer.masksToBounds = true
         
@@ -80,18 +101,6 @@ class ProfileViewController: UIViewController {
         
         scale = bgImageView!.bounds.size.width / bgImageView!.bounds.size.height
 
-//            _bgImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, -headViewH, kScreenWidth, headViewH)];
-//            _bgImageView.layer.masksToBounds = YES;
-//            _bgImageView.userInteractionEnabled = YES;
-//            _bgImageView.image = [[UIImage imageNamed:@"123.jpg"] blurImage];
-        
-        
-//            _headerImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, headH, headH)];
-//            self.scale = _bgImageView.bounds.size.width/_bgImageView.bounds.size.height;
-
-        
-            
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -110,17 +119,6 @@ class ProfileViewController: UIViewController {
             }
         )
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {

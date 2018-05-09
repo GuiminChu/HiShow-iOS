@@ -23,6 +23,20 @@
 		AE61451F1E714CD100C28667 /* CTFrameParserConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE61451A1E714CD100C28667 /* CTFrameParserConfig.swift */; };
 		AE6145221E715BA500C28667 /* TopicTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6145201E715BA500C28667 /* TopicTitleCell.swift */; };
 		AE6145231E715BA500C28667 /* TopicTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE6145211E715BA500C28667 /* TopicTitleCell.xib */; };
+		AE869FCB209C5732005F9156 /* WRNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE869FC5209C5732005F9156 /* WRNavigationBar.swift */; };
+		AE869FCC209C5732005F9156 /* WRCustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE869FC6209C5732005F9156 /* WRCustomNavigationBar.swift */; };
+		AE869FCD209C5732005F9156 /* WRProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE869FC8209C5732005F9156 /* WRProxy.swift */; };
+		AE869FCE209C5732005F9156 /* WRCycleScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE869FC9209C5732005F9156 /* WRCycleScrollView.swift */; };
+		AE869FCF209C5732005F9156 /* WRCycleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE869FCA209C5732005F9156 /* WRCycleCell.swift */; };
+		AEB209AA20A18D3500F1629C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB209A320A18D3400F1629C /* Constants.swift */; };
+		AEB209AB20A18D3500F1629C /* SCScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB209A420A18D3400F1629C /* SCScrollView.swift */; };
+		AEB209AC20A18D3500F1629C /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB209A520A18D3400F1629C /* SegmentedControl.swift */; };
+		AEB209AE20A18D3500F1629C /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB209A820A18D3400F1629C /* Protocols.swift */; };
+		AEB209AF20A18D3500F1629C /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB209A920A18D3400F1629C /* Style.swift */; };
+		AEB209BF20A27C5E00F1629C /* GMGestureTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB209BC20A27C5E00F1629C /* GMGestureTableView.swift */; };
+		AEB209C020A27C5E00F1629C /* GMSegmentedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB209BD20A27C5E00F1629C /* GMSegmentedView.swift */; };
+		AEB209C120A27C5E00F1629C /* GMProfileSubTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB209BE20A27C5E00F1629C /* GMProfileSubTableViewController.swift */; };
+		AEB209C320A27CBF00F1629C /* ProfileSubTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB209C220A27CBF00F1629C /* ProfileSubTableViewController.swift */; };
 		CE9E3A481D921710009CE13B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E3A471D921710009CE13B /* AppDelegate.swift */; };
 		CE9E3A4D1D921710009CE13B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9E3A4B1D921710009CE13B /* Main.storyboard */; };
 		CE9E3A4F1D921710009CE13B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE9E3A4E1D921710009CE13B /* Assets.xcassets */; };
@@ -85,6 +99,20 @@
 		AE61451A1E714CD100C28667 /* CTFrameParserConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTFrameParserConfig.swift; sourceTree = "<group>"; };
 		AE6145201E715BA500C28667 /* TopicTitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicTitleCell.swift; sourceTree = "<group>"; };
 		AE6145211E715BA500C28667 /* TopicTitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicTitleCell.xib; sourceTree = "<group>"; };
+		AE869FC5209C5732005F9156 /* WRNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRNavigationBar.swift; sourceTree = "<group>"; };
+		AE869FC6209C5732005F9156 /* WRCustomNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRCustomNavigationBar.swift; sourceTree = "<group>"; };
+		AE869FC8209C5732005F9156 /* WRProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRProxy.swift; sourceTree = "<group>"; };
+		AE869FC9209C5732005F9156 /* WRCycleScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRCycleScrollView.swift; sourceTree = "<group>"; };
+		AE869FCA209C5732005F9156 /* WRCycleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRCycleCell.swift; sourceTree = "<group>"; };
+		AEB209A320A18D3400F1629C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		AEB209A420A18D3400F1629C /* SCScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCScrollView.swift; sourceTree = "<group>"; };
+		AEB209A520A18D3400F1629C /* SegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
+		AEB209A820A18D3400F1629C /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		AEB209A920A18D3400F1629C /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		AEB209BC20A27C5E00F1629C /* GMGestureTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMGestureTableView.swift; sourceTree = "<group>"; };
+		AEB209BD20A27C5E00F1629C /* GMSegmentedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMSegmentedView.swift; sourceTree = "<group>"; };
+		AEB209BE20A27C5E00F1629C /* GMProfileSubTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMProfileSubTableViewController.swift; sourceTree = "<group>"; };
+		AEB209C220A27CBF00F1629C /* ProfileSubTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSubTableViewController.swift; sourceTree = "<group>"; };
 		C000A4D17020E7EEC09D2DB9 /* Pods_HiShowUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HiShowUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5DF6966B6A5F2DD967CA742 /* Pods-HiShowUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiShowUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HiShowUITests/Pods-HiShowUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CE9E3A441D921710009CE13B /* HiShow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiShow.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,7 +127,6 @@
 		CE9E3A631D921710009CE13B /* HiShowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HiShowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE9E3A671D921710009CE13B /* HiShowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiShowUITests.swift; sourceTree = "<group>"; };
 		CE9E3A691D921710009CE13B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE9E3A751D92221C009CE13B /* HiShow-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HiShow-Bridging-Header.h"; sourceTree = "<group>"; };
 		CE9E3A7B1D9222C4009CE13B /* DescCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescCell.swift; sourceTree = "<group>"; };
 		CE9E3A7C1D9222C4009CE13B /* DescCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DescCell.xib; sourceTree = "<group>"; };
 		CE9E3A7D1D9222C4009CE13B /* ProfileAvatarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileAvatarCell.swift; sourceTree = "<group>"; };
@@ -183,6 +210,48 @@
 			path = CoreText;
 			sourceTree = "<group>";
 		};
+		AE869FC4209C5732005F9156 /* WRNavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				AE869FC5209C5732005F9156 /* WRNavigationBar.swift */,
+				AE869FC6209C5732005F9156 /* WRCustomNavigationBar.swift */,
+				AE869FC7209C5732005F9156 /* WRCycleScrollView */,
+			);
+			path = WRNavigationBar;
+			sourceTree = "<group>";
+		};
+		AE869FC7209C5732005F9156 /* WRCycleScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				AE869FC8209C5732005F9156 /* WRProxy.swift */,
+				AE869FC9209C5732005F9156 /* WRCycleScrollView.swift */,
+				AE869FCA209C5732005F9156 /* WRCycleCell.swift */,
+			);
+			path = WRCycleScrollView;
+			sourceTree = "<group>";
+		};
+		AEB209A220A18D3400F1629C /* SegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				AEB209A320A18D3400F1629C /* Constants.swift */,
+				AEB209A420A18D3400F1629C /* SCScrollView.swift */,
+				AEB209A520A18D3400F1629C /* SegmentedControl.swift */,
+				AEB209A820A18D3400F1629C /* Protocols.swift */,
+				AEB209A920A18D3400F1629C /* Style.swift */,
+			);
+			path = SegmentedControl;
+			sourceTree = "<group>";
+		};
+		AEB209BB20A27C5E00F1629C /* GMProfileViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AEB209BC20A27C5E00F1629C /* GMGestureTableView.swift */,
+				AEB209BD20A27C5E00F1629C /* GMSegmentedView.swift */,
+				AEB209BE20A27C5E00F1629C /* GMProfileSubTableViewController.swift */,
+			);
+			path = GMProfileViewController;
+			sourceTree = "<group>";
+		};
 		BB87DD098F6EB50D1A38A5BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,7 +290,6 @@
 				CE9E3A471D921710009CE13B /* AppDelegate.swift */,
 				AE61450C1E70FAE100C28667 /* HiShowConfig.swift */,
 				AE61450E1E7104DB00C28667 /* HiShowAPI.swift */,
-				CE9E3A751D92221C009CE13B /* HiShow-Bridging-Header.h */,
 				CE9E3A791D9222C4009CE13B /* Features */,
 				CE9E3A8E1D9222C4009CE13B /* General */,
 				CE9E3A4B1D921710009CE13B /* Main.storyboard */,
@@ -263,11 +331,12 @@
 		CE9E3A7A1D9222C4009CE13B /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				CE9E3A7F1D9222C4009CE13B /* ProfileViewController.swift */,
+				AEB209C220A27CBF00F1629C /* ProfileSubTableViewController.swift */,
 				CE9E3A7B1D9222C4009CE13B /* DescCell.swift */,
 				CE9E3A7C1D9222C4009CE13B /* DescCell.xib */,
 				CE9E3A7D1D9222C4009CE13B /* ProfileAvatarCell.swift */,
 				CE9E3A7E1D9222C4009CE13B /* ProfileAvatarCell.xib */,
-				CE9E3A7F1D9222C4009CE13B /* ProfileViewController.swift */,
 				CE9E3A801D9222C4009CE13B /* UserInfoCell.swift */,
 				CE9E3A811D9222C4009CE13B /* UserInfoCell.xib */,
 				CE9E3A821D9222C4009CE13B /* UserInfoModel.swift */,
@@ -304,6 +373,9 @@
 		CE9E3A8E1D9222C4009CE13B /* General */ = {
 			isa = PBXGroup;
 			children = (
+				AEB209BB20A27C5E00F1629C /* GMProfileViewController */,
+				AEB209A220A18D3400F1629C /* SegmentedControl */,
+				AE869FC4209C5732005F9156 /* WRNavigationBar */,
 				AE6145101E71422700C28667 /* Helper */,
 				CE9E3A8F1D9222C4009CE13B /* Extensions */,
 				CE9E3A921D9222C4009CE13B /* View */,
@@ -341,7 +413,6 @@
 				CE9E3A411D921710009CE13B /* Frameworks */,
 				CE9E3A421D921710009CE13B /* Resources */,
 				8E893B5FDC9AE112B2709625 /* [CP] Embed Pods Frameworks */,
-				76C7734B4EB76EA88F36ACA4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -360,8 +431,6 @@
 				CE9E3A541D921710009CE13B /* Sources */,
 				CE9E3A551D921710009CE13B /* Frameworks */,
 				CE9E3A561D921710009CE13B /* Resources */,
-				CC08E8111E8529785549AF41 /* [CP] Embed Pods Frameworks */,
-				6E32A48DA06BD31209944D21 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -381,8 +450,6 @@
 				CE9E3A5F1D921710009CE13B /* Sources */,
 				CE9E3A601D921710009CE13B /* Frameworks */,
 				CE9E3A611D921710009CE13B /* Resources */,
-				F7BB5F6DCD78A5413A2442E0 /* [CP] Embed Pods Frameworks */,
-				D79CEFF2D0B08A6A8662E574 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -401,7 +468,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = cgm;
 				TargetAttributes = {
 					CE9E3A431D921710009CE13B = {
@@ -483,13 +550,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HiShowTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5695E670DAF48C21BB135ED8 /* [CP] Check Pods Manifest.lock */ = {
@@ -498,43 +568,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HiShowUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		6E32A48DA06BD31209944D21 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HiShowTests/Pods-HiShowTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		76C7734B4EB76EA88F36ACA4 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HiShow/Pods-HiShow-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8E893B5FDC9AE112B2709625 /* [CP] Embed Pods Frameworks */ = {
@@ -543,9 +586,24 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HiShow/Pods-HiShow-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ESPullToRefresh/ESPullToRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/FaceAware/FaceAware.framework",
+				"${BUILT_PRODUCTS_DIR}/GDPerformanceView-Swift/GDPerformanceView_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Navi/Navi.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESPullToRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FaceAware.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GDPerformanceView_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Navi.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -558,58 +616,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HiShow-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		CC08E8111E8529785549AF41 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HiShowTests/Pods-HiShowTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D79CEFF2D0B08A6A8662E574 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HiShowUITests/Pods-HiShowUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F7BB5F6DCD78A5413A2442E0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HiShowUITests/Pods-HiShowUITests-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -619,31 +635,45 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE869FCB209C5732005F9156 /* WRNavigationBar.swift in Sources */,
 				CE9E3AA51D9222C4009CE13B /* ExUIView.swift in Sources */,
 				AE6145121E71422700C28667 /* EmojiData.swift in Sources */,
 				CE9E3A941D9222C4009CE13B /* DescCell.swift in Sources */,
 				CE9E3AA11D9222C4009CE13B /* TopicModel.swift in Sources */,
+				AEB209BF20A27C5E00F1629C /* GMGestureTableView.swift in Sources */,
 				CE9E3AA71D9222C4009CE13B /* RoundAvatar.swift in Sources */,
 				CE9E3AA21D9222C4009CE13B /* TopicsViewController.swift in Sources */,
 				CE9E3A9E1D9222C4009CE13B /* TopicDetailViewController.swift in Sources */,
 				AE59997E1E6570C900B1F34E /* TopicDetailCell.swift in Sources */,
+				AEB209AA20A18D3500F1629C /* Constants.swift in Sources */,
+				AE869FCE209C5732005F9156 /* WRCycleScrollView.swift in Sources */,
 				CE9E3A991D9222C4009CE13B /* UserInfoCell.swift in Sources */,
+				AE869FCC209C5732005F9156 /* WRCustomNavigationBar.swift in Sources */,
+				AEB209AC20A18D3500F1629C /* SegmentedControl.swift in Sources */,
+				AEB209AB20A18D3500F1629C /* SCScrollView.swift in Sources */,
+				AEB209AE20A18D3500F1629C /* Protocols.swift in Sources */,
 				CE9E3A9F1D9222C4009CE13B /* TopicItemCell.swift in Sources */,
 				AE61451F1E714CD100C28667 /* CTFrameParserConfig.swift in Sources */,
 				AE61450F1E7104DB00C28667 /* HiShowAPI.swift in Sources */,
+				AEB209AF20A18D3500F1629C /* Style.swift in Sources */,
 				CE9E3A9C1D9222C4009CE13B /* TopicContentCell.swift in Sources */,
 				AE61451E1E714CD100C28667 /* CTFrameParser.swift in Sources */,
 				CE9E3A981D9222C4009CE13B /* ProfileViewController.swift in Sources */,
 				CE9E3A9B1D9222C4009CE13B /* UserInfoModel.swift in Sources */,
+				AE869FCF209C5732005F9156 /* WRCycleCell.swift in Sources */,
+				AEB209C320A27CBF00F1629C /* ProfileSubTableViewController.swift in Sources */,
 				AE61451D1E714CD100C28667 /* CTDisplayView.swift in Sources */,
 				AE6145221E715BA500C28667 /* TopicTitleCell.swift in Sources */,
 				AE61450D1E70FAE100C28667 /* HiShowConfig.swift in Sources */,
 				CE9E3A961D9222C4009CE13B /* ProfileAvatarCell.swift in Sources */,
 				AE61451B1E714CD100C28667 /* CoreTextData.swift in Sources */,
 				CE9E3AA61D9222C4009CE13B /* ExUIViewController.swift in Sources */,
+				AEB209C120A27C5E00F1629C /* GMProfileSubTableViewController.swift in Sources */,
 				CE9E3A481D921710009CE13B /* AppDelegate.swift in Sources */,
+				AEB209C020A27C5E00F1629C /* GMSegmentedView.swift in Sources */,
 				AE61450B1E70F6A300C28667 /* ImageViewingController.swift in Sources */,
 				AE61451C1E714CD100C28667 /* CoreTextImageData.swift in Sources */,
+				AE869FCD209C5732005F9156 /* WRProxy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -707,7 +737,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -715,7 +747,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -757,7 +793,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -765,7 +803,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -804,9 +846,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cgm.HiShow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "HiShow/HiShow-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -823,8 +865,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cgm.HiShow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "HiShow/HiShow-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -838,7 +880,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cgm.HiShowTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HiShow.app/HiShow";
 			};
 			name = Debug;
@@ -853,7 +895,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cgm.HiShowTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HiShow.app/HiShow";
 			};
 			name = Release;
@@ -867,7 +909,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cgm.HiShowUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = HiShow;
 			};
 			name = Debug;
@@ -881,7 +923,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cgm.HiShowUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = HiShow;
 			};
 			name = Release;

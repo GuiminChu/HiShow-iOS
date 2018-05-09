@@ -22,20 +22,20 @@ public enum Reason: CustomStringConvertible {
         case .noData:
             return "NoData"
         case .other(let error):
-            return "Other, Error: \(error?.description)"
+            return "Other, Error: \(error?.description ?? "")"
         }
     }
 }
 
 public typealias FailureHandler = (_ reason: Reason, _ errorMessage: String?) -> Void
 
-public let defaultFailureHandler: FailureHandler = { reason, errorMessage in
-    print("\n***************************** YepNetworking Failure *****************************")
-    print("Reason: \(reason)")
-    if let errorMessage = errorMessage {
-        print("errorMessage: >>>\(errorMessage)<<<\n")
-    }
-}
+//public let defaultFailureHandler: FailureHandler = { reason, errorMessage in
+//    print("\n***************************** YepNetworking Failure *****************************")
+//    print("Reason: \(reason)")
+//    if let errorMessage = errorMessage {
+//        print("errorMessage: >>>\(errorMessage)<<<\n")
+//    }
+//}
 
 //https://api.douban.com/v2/group/topic/90364216/comments
 //https://api.douban.com/v2/group/topic/90364216

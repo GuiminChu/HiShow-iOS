@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ESPullToRefresh
 
 class TopicsViewController: UIViewController, SegueHandlerType {
 
@@ -17,118 +18,91 @@ class TopicsViewController: UIViewController, SegueHandlerType {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var topics = [Topic]() {
-        didSet {
-            if topics.count > 0 {
-                tableView.reloadData()
-            }
-        }
-    }
-    
-    /// 分页参数，第一页为0
-    var startIndex = 0
+    lazy var navBar = WRCustomNavigationBar.CustomNavigationBar()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        navigationController?.navigationBar.isHidden = true
+//        automaticallyAdjustsScrollViewInsets = false
+        
+//        setupNavBar()
+//
+//        if #available(iOS 11.0, *) {
+//            tableView.contentInsetAdjustmentBehavior = .never
+//        }
+//
+//        view.insertSubview(navBar, aboveSubview: tableView)
+//        navBar.title = "自定义导航栏"
         // 定义子界面返回键的文字文本
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
 
         tableView.register(TopicItemCell.self)
         
-        initMJRefresh1()
-    }
-    
-    func initMJRefresh1(){
-        let mjHeader = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(pullToRefresh))
-        mjHeader?.lastUpdatedTimeLabel!.isHidden = true
-        tableView.mj_header = mjHeader
-        tableView.mj_header.beginRefreshing()
+        initPullToRefresh()
+        TopicItemStore.shared.start = 0
         
-        tableView.mj_footer = MJRefreshBackNormalFooter(refreshingTarget: self, refreshingAction: #selector(pullToLoadMore))
+        NotificationCenter.default.addObserver(self, selector: #selector(topicsDidChange), name: NSNotification.Name(rawValue: activityInfoStoreDidChangedNotification), object: nil)
     }
     
-    func pullToRefresh() {
-        //  进入刷新状态后执行
-        startIndex = 0
+    fileprivate func setupNavBar() {
         
-        HiShowAPI.sharedInstance.getTopics(start: startIndex,
-                                           completion: { [weak self] topicModel in
-                                            
-                                            guard let strongSelf = self else { return }
-                                            
-                                            strongSelf.topics = topicModel.topics
-                                            strongSelf.tableView.mj_header.endRefreshing()
-                                            strongSelf.tableView.mj_footer.resetNoMoreData()
-            }, failureHandler: { (reason, errorMessage) in
-                
-        })
-    }
-    
-    func pullToLoadMore() {
-
-        startIndex += 20
+        view.addSubview(navBar)
         
-        HiShowAPI.sharedInstance.getTopics(start: startIndex,
-                                           completion: { [weak self] topicModel in
-                                            
-                                            guard let strongSelf = self else { return }
-                                            
-                                            strongSelf.topics += topicModel.topics
-                                            strongSelf.tableView.mj_footer.endRefreshing()
-                                            
-            }, failureHandler: { (reason, errorMessage) in
-                
-        })
-    }
-    
-    // 初始化 MJRefresh
-    func initMJRefresh() {
-        // 下拉刷新
-        let mjHeader = MJRefreshNormalHeader {
-            
-            //  进入刷新状态后执行
-            self.startIndex = 0
-            
-            HiShowAPI.sharedInstance.getTopics(start: self.startIndex,
-                completion: { [weak self] topicModel in
-                    
-                    guard let strongSelf = self else { return }
-                    
-                    strongSelf.topics = topicModel.topics
-                    strongSelf.tableView.mj_header.endRefreshing()
-                    strongSelf.tableView.mj_footer.resetNoMoreData()
-                }, failureHandler: { (reason, errorMessage) in
-                    
-            })
+        // 设置自定义导航栏背景图片
+//        navBar.barBackgroundImage = UIImage(named: "millcolorGrad")
+        
+        // 设置自定义导航栏背景颜色
+//         navBar.backgroundColor = .black
+        navBar.barBackgroundColor = .black
+        
+        // 设置自定义导航栏标题颜色
+        navBar.titleLabelColor = .white
+        
+        // 设置自定义导航栏左右按钮字体颜色
+        navBar.wr_setTintColor(color: .white)
+        
+        if self.navigationController?.childViewControllers.count != 1 {
+            navBar.wr_setLeftButton(title: "<<", titleColor: UIColor.white)
         }
-        // 隐藏时间
-//        mjHeader?.lastUpdatedTimeLabel?.hidden = true
-        mjHeader?.lastUpdatedTimeLabel.isHidden = true
-        // 字体颜色
-        mjHeader?.stateLabel.textColor = UIColor.lightGray
-        tableView.mj_header = mjHeader
-        
-        // 马上进入刷新状态
-        tableView.mj_header.beginRefreshing()
-        
-        // 上拉加载更多
-        let mjFooter = MJRefreshBackNormalFooter {
-            self.startIndex += 20
-            
-            HiShowAPI.sharedInstance.getTopics(start: self.startIndex,
-                completion: { [weak self] topicModel in
-                    
-                    guard let strongSelf = self else { return }
-                    
-                    strongSelf.topics += topicModel.topics
-                    strongSelf.tableView.mj_footer.endRefreshing()
-                
-                }, failureHandler: { (reason, errorMessage) in
-                    
-            })
+    }
+    
+    func initPullToRefresh() {
+        self.tableView.es.addPullToRefresh { [unowned self] in
+            TopicItemStore.shared.start = 0
         }
-        tableView.mj_footer = mjFooter
+        
+        self.tableView.es.addInfiniteScrolling { [unowned self] in
+            TopicItemStore.shared.start += 20
+        }
+    }
+    
+    @objc func topicsDidChange(_ notification: Notification) {
+        let xx = notification.userInfo![notification.name.rawValue] as! RefreshStatus
+        switch xx {
+        case .none:
+            print("none")
+        case .pullSucess(let hasMoreData):
+            self.tableView.reloadData()
+            self.tableView.es.stopPullToRefresh()
+            if hasMoreData {
+                self.tableView.es.resetNoMoreData()
+            } else {
+                self.tableView.es.noticeNoMoreData()
+            }
+        case .loadSucess(let hasMoreData):
+            self.tableView.reloadData()
+            self.tableView.es.stopLoadingMore()
+            if !hasMoreData {
+                self.tableView.es.noticeNoMoreData()
+            }
+        case .error(let message):
+            self.tableView.es.stopPullToRefresh()
+            self.tableView.es.stopLoadingMore()
+//            self.tableView.mj_footer.endRefreshing()
+            print(message)
+        }
+        
     }
 }
 
@@ -144,9 +118,11 @@ extension TopicsViewController {
 //            controller.uid = sender as? String
             controller.author = sender as! Author
         case .ToTopicDetailSegue:
-            
-            let controller = segue.destination as! TopicDetailViewController
-            controller.topic = topics[sender as! Int]
+
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let controller = segue.destination as! TopicDetailViewController
+                controller.topic = TopicItemStore.shared.topic(at: indexPath.row)
+            }
         }
     }
 }
@@ -156,14 +132,13 @@ extension TopicsViewController {
 extension TopicsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return topics.count
+        return TopicItemStore.shared.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TopicItemCell.reuseIdentifier, for: indexPath) as! TopicItemCell
-        
-        // Configure the cell
-        cell.configure(topics[indexPath.row])
+
+        cell.configure(TopicItemStore.shared.topic(at: indexPath.row))
         
         cell.didSelectUser = { [weak self] cell in
             
@@ -172,12 +147,11 @@ extension TopicsViewController: UITableViewDataSource, UITableViewDelegate {
             }
             
             if let path = tableView.indexPath(for: cell) {
-                let topic = this.topics[path.row]
+                let topic = TopicItemStore.shared.topic(at: path.row)
 //                let uid = topic.author.id
                 let author = topic.author
 //                this.performSegueWithIdentifier(SegueIdentifier.ToProfileSegue, sender: uid as AnyObject?)
                 this.performSegueWithIdentifier(SegueIdentifier.ToProfileSegue, sender: author)
-                
             }
         }
         
@@ -193,6 +167,6 @@ extension TopicsViewController: UITableViewDataSource, UITableViewDelegate {
             tableView.deselectRow(at: indexPath, animated: true)
         }
         
-        performSegueWithIdentifier(SegueIdentifier.ToTopicDetailSegue, sender: indexPath.row)
+        performSegueWithIdentifier(SegueIdentifier.ToTopicDetailSegue, sender: nil)
     }
 }

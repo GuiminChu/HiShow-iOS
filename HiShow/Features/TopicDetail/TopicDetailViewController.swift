@@ -28,9 +28,11 @@ class TopicDetailViewController: UIViewController {
         tableView.register(TopicDetailCell.self)
 
         NotificationCenter.default.addObserver(self, selector: #selector(imagePressed(_:)), name: HiShowConfig.NotificationName.coreTextImagePressedNotification, object: nil)
+        
+        print(topic?.content)
     }
     
-    func imagePressed(_ notification: Notification) {
+    @objc func imagePressed(_ notification: Notification) {
         let userInfo = notification.userInfo
         
         guard let imageData =  userInfo?["imageData"] as? CoreTextImageData else {

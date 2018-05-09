@@ -1,10 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -14,10 +15,10 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="359"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8Y7-bR-MEy" id="HRY-qq-PoV">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="359"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="358.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PQl-Yl-cCy">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PQl-Yl-cCy">
                         <rect key="frame" x="5" y="6" width="365" height="348"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IgR-6h-Fiq">
@@ -83,7 +84,6 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="IgR-6h-Fiq" secondAttribute="trailing" id="0wb-c7-CHn"/>
                             <constraint firstAttribute="height" constant="348" id="1G6-kt-f0i"/>
@@ -97,11 +97,6 @@
                             <constraint firstAttribute="trailing" secondItem="Q1w-fH-e1a" secondAttribute="trailing" id="uzG-QL-r0p"/>
                             <constraint firstItem="IgR-6h-Fiq" firstAttribute="top" secondItem="PQl-Yl-cCy" secondAttribute="top" id="wlF-TU-4Eg"/>
                         </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                <integer key="value" value="5"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="NW1-7F-ax1"/>
@@ -118,6 +113,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="avatarImageView" destination="M41-uW-OPg" id="NnD-tJ-hag"/>
+                <outlet property="containerView" destination="PQl-Yl-cCy" id="Jfh-g3-iRu"/>
                 <outlet property="likeCountLabel" destination="sV4-Vk-DIM" id="WQv-ta-oua"/>
                 <outlet property="nameLabel" destination="SGo-mQ-Sh3" id="JaU-WF-JmP"/>
                 <outlet property="titleLabel" destination="Lek-Xh-K8p" id="Dsv-Q1-YGg"/>

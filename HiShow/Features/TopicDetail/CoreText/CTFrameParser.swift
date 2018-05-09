@@ -36,7 +36,7 @@ class CTFrameParser: NSObject {
         let resultWithoutEmoji = removeEmoji(string: str)
         
         // 删除文本中的换行符"\r" (注：\r不占用字符)
-        var result = resultWithoutEmoji.replacingOccurrences(of: "\r", with: "")
+        var result = str.replacingOccurrences(of: "\r", with: "")
         
         while let range = result.range(of: "<图片") {
             indexArray.append(result.characters.distance(from: result.startIndex, to: range.lowerBound))
@@ -100,6 +100,11 @@ class CTFrameParser: NSObject {
             // insertIndex 记录需要插入图片的原始位置，插入一张图片后(图片占一个字符)原始位置向右偏移一位才是真实位置
             for (offset, insertIndex) in tuples.1.enumerated() {
                 
+                // 有被管理员删除的照片，这里判断一下
+                if offset >= topic.photos.count {
+                    break
+                }
+                
                 let photoInfo = topic.photos[offset]
                 
                 let imageData = CoreTextImageData()
@@ -161,11 +166,12 @@ class CTFrameParser: NSObject {
     ///
     /// - Parameter config: 配置信息
     /// - Returns: 文字基本属性
-    private class func attributes(config: CTFrameParserConfig) -> [String: Any] {
+    private class func attributes(config: CTFrameParserConfig) -> [NSAttributedStringKey: Any] {
         // 字体大小
         let fontSize = config.fontSize
         let uiFont = UIFont.systemFont(ofSize: fontSize)
-        let ctFont = CTFontCreateWithName(uiFont.fontName as CFString?, fontSize, nil)
+//        let ctFont = CTFontCreateWithName((uiFont.fontName as CFString?)!, fontSize, nil)
+        let ctFont = CTFontCreateWithName(uiFont.fontName as CFString, fontSize, nil)
         // 字体颜色
         let textColor = config.textColor
         
@@ -178,12 +184,12 @@ class CTFrameParser: NSObject {
             CTParagraphStyleSetting(spec: .minimumLineSpacing, valueSize: MemoryLayout<CGFloat>.size, value: &lineSpacing)
         ]
         let paragraphStyle = CTParagraphStyleCreate(settings, settings.count)
-        
+
         // 封装
-        let dict: [String: Any] = [
-            NSForegroundColorAttributeName: textColor,
-            NSFontAttributeName: ctFont,
-            NSParagraphStyleAttributeName: paragraphStyle
+        let dict: [NSAttributedStringKey: Any] = [
+            NSAttributedStringKey.foregroundColor: textColor,
+            NSAttributedStringKey.font: ctFont,
+            NSAttributedStringKey.paragraphStyle: paragraphStyle
         ]
         
         return dict
@@ -230,15 +236,13 @@ class CTFrameParser: NSObject {
             return pictureRunInfo.width
         })
         
-        
         let selfPtr = UnsafeMutableRawPointer(Unmanaged.passRetained(pic).toOpaque())
         
         // 创建 RunDelegate, 传入 imageCallback 中图片数据
         let runDelegate = CTRunDelegateCreate(&callbacks, selfPtr)
         
-        
         let imageAttributedString = NSMutableAttributedString(string: " ")
-        imageAttributedString.addAttribute(kCTRunDelegateAttributeName as String, value: runDelegate!, range: NSMakeRange(0, 1))
+        imageAttributedString.addAttribute(kCTRunDelegateAttributeName as NSAttributedStringKey, value: runDelegate!, range: NSMakeRange(0, 1))
         
         return imageAttributedString
     }

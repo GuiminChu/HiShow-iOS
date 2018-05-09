@@ -9,6 +9,59 @@
 import Foundation
 import SwiftyJSON
 
+enum RefreshStatus {
+    case none
+    case pullSucess(hasMoreData: Bool)
+    case loadSucess(hasMoreData: Bool)
+    case error(message: String?)
+}
+
+let activityInfoStoreDidChangedNotification = "com.mst.MyRunning.ActivityInfoStoreDidChangedNotification"
+
+class TopicItemStore {
+    static let shared = TopicItemStore()
+    
+    private var topics = [Topic]()
+    
+    private init() {}
+    
+    private var refreshStatus = RefreshStatus.none {
+        didSet {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: activityInfoStoreDidChangedNotification), object: self, userInfo: [activityInfoStoreDidChangedNotification: refreshStatus])
+        }
+    }
+    
+    var count: Int {
+        return topics.count
+    }
+    
+    var start = 0 {
+        didSet {
+            request(start: start)
+        }
+    }
+    
+    func topic(at index: Int) -> Topic {
+        return topics[index]
+    }
+    
+    func request(start: Int) {
+        HiShowAPI.sharedInstance.getTopics(start: start, completion: { topicModel in
+            let hasMoreData = topicModel.topics.count < 20
+            if start == 0 {
+                self.topics = topicModel.topics
+                self.refreshStatus = RefreshStatus.pullSucess(hasMoreData: hasMoreData)
+            } else {
+                self.topics += topicModel.topics
+                self.refreshStatus = RefreshStatus.loadSucess(hasMoreData: hasMoreData)
+            }
+        
+        }, failureHandler: { (reason, errorMessage) in
+            self.refreshStatus = RefreshStatus.error(message: errorMessage)
+        })
+    }
+}
+
 struct TopicModel {
     
     var count: Int!

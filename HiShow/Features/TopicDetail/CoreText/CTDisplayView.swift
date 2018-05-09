@@ -87,7 +87,7 @@ class CTDisplayView: UIView {
         self.isUserInteractionEnabled = true
     }
     
-    func userTapGestureDetected(recognizer: UITapGestureRecognizer) {
+    @objc func userTapGestureDetected(recognizer: UITapGestureRecognizer) {
         let point = recognizer.location(in: self)
         
         if let imageArray = data?.imageArray {

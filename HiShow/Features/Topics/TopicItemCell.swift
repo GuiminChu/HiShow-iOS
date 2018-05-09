@@ -13,6 +13,46 @@ import Kingfisher
 //    func tapImageView(_ images: [SKPhoto])
 //}
 
+extension UIView {
+    private func kt_addCorner(radius: CGFloat,
+                              borderWidth: CGFloat,
+                              backgroundColor: UIColor,
+                              borderColor: UIColor) {
+        let image = kt_drawRectWithRoundedCorner(radius: radius,
+                                                 borderWidth: borderWidth,
+                                                 backgroundColor: backgroundColor,
+                                                 borderColor: borderColor)
+        
+        let imageView = UIImageView(image: image)
+        self.insertSubview(imageView, at: 0)
+    }
+    
+    private func kt_drawRectWithRoundedCorner(radius: CGFloat,
+                                              borderWidth: CGFloat,
+                                              backgroundColor: UIColor,
+                                              borderColor: UIColor) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(self.bounds.size, true, UIScreen.main.scale)
+        let context = UIGraphicsGetCurrentContext()
+        context?.setAlpha(1)
+        context?.setFillColor(backgroundColor.cgColor)
+        context?.fill(self.bounds)
+        let maskPath = UIBezierPath.init(roundedRect: self.bounds.insetBy(dx: 1, dy: 1), cornerRadius: radius)
+        context?.setStrokeColor(borderColor.cgColor)
+        maskPath.stroke()
+        maskPath.lineWidth = borderWidth
+        context?.addPath(maskPath.cgPath)
+        context?.drawPath(using: .fillStroke)
+        let output = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return output!
+    }
+    
+    func cornerRadius(_ radius: CGFloat, borderWidth: CGFloat = 0, backgroundColor: UIColor = .clear, borderColor: UIColor = .clear) {
+        self.kt_addCorner(radius: radius, borderWidth: borderWidth, backgroundColor: backgroundColor, borderColor: borderColor)
+    }
+    
+}
+
 final class TopicItemCell: UITableViewCell {
     
     // MARK: - Properties
@@ -27,6 +67,7 @@ final class TopicItemCell: UITableViewCell {
     
 //    var delegate: TapImageViewDelegate?
     
+    @IBOutlet weak var containerView: UIView!
     var didSelectUser: ((_ cell: TopicItemCell) -> Void)?
     
     // MARK: - View Life Cycle
@@ -40,6 +81,7 @@ final class TopicItemCell: UITableViewCell {
         avatarImageView.addGestureRecognizer(avatarGestureRecognizer)
         
         selectionStyle = .none
+        containerView.cornerRadius(10)
     }
     
     override func prepareForReuse() {
@@ -56,11 +98,16 @@ final class TopicItemCell: UITableViewCell {
         likeCountLabel.text = "\(topicInfo.likeCount!)"
         
         if let photoAlt = topicInfo.photos.first?.alt, let url = URL(string: photoAlt) {
-            topicImageView.kf_setImage(with: url, options: [KingfisherOptionsInfoItem.transition(ImageTransition.fade(0.25))])
+            topicImageView.kf.setImage(with: url, options: [KingfisherOptionsInfoItem.transition(ImageTransition.fade(0.25))])
         }
         
         if let urlString = topicInfo.author.avatar, let url = URL(string: urlString) {
-            avatarImageView.navi_setAvatar(RoundAvatar(avatarURL: url, avatarStyle: picoAvatarStyle), withFadeTransitionDuration: 0.25)
+            
+            let optionsInfo = [KingfisherOptionsInfoItem.transition(ImageTransition.fade(0.25)),
+                               KingfisherOptionsInfoItem.processor(RoundCornerImageProcessor(cornerRadius: 16))]
+            
+            avatarImageView.kf.setImage(with: url, options: optionsInfo)
+//            avatarImageView.navi_setAvatar(RoundAvatar(avatarURL: url, avatarStyle: picoAvatarStyle), withFadeTransitionDuration: 0.25)
         }
         
 //        for topicPhotoInfo in topicInfo.photos {
@@ -70,7 +117,7 @@ final class TopicItemCell: UITableViewCell {
 //        }
     }
 
-    func didTapAvatar(_ recognizer: UITapGestureRecognizer) {
+    @objc func didTapAvatar(_ recognizer: UITapGestureRecognizer) {
         didSelectUser?(self)
     }
 }
